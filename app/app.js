@@ -78,7 +78,8 @@ function drawPhase(){
     var idReference = Card.cardDeck[i].id;
     for(var j = 0; j < Card.allCards.length; j++){
       if(idReference === Card.allCards[j].id){
-        document.getElementById(`card${i}`).innerHTML = Card.allCards[j].name;
+        document.getElementById(`card${i}title`).innerHTML = Card.allCards[j].name;
+        document.getElementById(`card${i}id`).innerHTML = Card.allCards[j].id;
       }
     }
   }
@@ -86,10 +87,18 @@ function drawPhase(){
   console.table(Card.cardDeck)
 }
 
-function handleStart(){
+function handleStart(event){
   console.log('event started')
   shuffle(Card.allCards);
+  drawPhase();
+}
+function handleSelection(){
+    console.log('selection made')
+    console.log(event.target.id.innerHTML)
 }
 
 var startElement = document.getElementById('start');
+var containerEL = document.getElementById('container');
 startElement.addEventListener('click', handleStart);
+containerEL.addEventListener('click', handleSelection);
+
