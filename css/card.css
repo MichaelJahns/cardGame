@@ -1,10 +1,10 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
-  transition: 0.3s;
+  transition: 0.4s;
   width: 30%;
   float: left;
   margin: 15px;
-  width: 30%;
+  height: 90%;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -13,9 +13,9 @@
 .container {
   padding: 2px 16px;
   display: inline-block;
-  outline: groove red 5px;
+  outline: groove rgb(52, 64, 104) 5px;
   margin: 86px;
   width: 950px;
   padding-right: 15px;
-  height: 
+  height: 300px; 
  }
