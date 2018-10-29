@@ -1,40 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Game Name Here</title>
-  <link rel="stylesheet"  href="css/reset.css" />
-  <link rel="stylesheet"  href="css/style.css" /> 
-  <link rel="stylesheet"  href="css/card.css" />
-</head>
 
-<body>
+<link rel="stylesheet"  href="css/reset.css" />
+<link rel="stylesheet"  href="css/style.css" /> 
+<link rel="stylesheet"  href="css/card.css" />
+      
+    <button id=start>Start Game</button>
+<header>
+   <h2> Health    <span id=healthBar>    50</span></h2>
+   <h2> Hope      <span id=hopeBar>      50</span></h2>
+   <h2> Resources <span id=resourceBar>  50</span></h2>
+   <h2> Protection<span id=protectionBar>50</span></h2>
+</header>
 
-  <nav class="nav_menu">
-       <a href="index.html" > Home </a>
-       <a class="active"> Play Game </a>
-       <a href="aboutteam.html"> About Us </a>
-  </nav>
-
-  <div class= "container">
-    <div class=card>
-      <h2><b> Card one</b></h2>
+<main>
+    <div class= "container">
+      <div id = card0> Card One   </div>
+      <div id = card1> Card Two   </div>
+      <div id = card2> Card Three </div>
     </div>
-    <div class= card>
-      <h2><b> Card two</b></h2>
-    </div>
-    <div class= card>
-      <h2><b> Card three</b></h2>
-    </div>
-  </div>
-
-  <script src='app/constructor.js'></script>
-</body>
-</html>
-
- 
-       
-
+</main>
   
     
-  
+<script src=app/constructor.js></script>
+<script src=app/app.js></script>
 
