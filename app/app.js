@@ -1,3 +1,8 @@
+//Global Variables
+var health = 50;
+var hope = 50;
+var resources = 50;
+var protection = 50;
 //Shuffle
 function shuffle(deck){
   Card.cardDeck = deck.splice(0);
