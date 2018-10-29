@@ -5,7 +5,8 @@ var resource = 50;
 var protection = 50;
 //Shuffle
 function shuffle(deck){
-  Card.cardDeck = deck.splice(0);
+  console.table(Card.allCards)
+  Card.cardDeck = deck.slice(0);
   console.table(Card.cardDeck)
   for (var i = Card.cardDeck.length - 1; i > 0; i--) {
     var randomPosition = Math.floor(Math.random() * (i + 1));
@@ -73,16 +74,14 @@ function updateProtection(operation, value){
 
 function drawPhase(){
 //render first three cards in Card.cardDeck to page
-//   for(var i = 0; i <= 2; i++){
-//     var idReference = Card.cardDeck[i].id;
-//     for(var j = 0; j < Card.allCards.length; j++){
-//       if(idReference === Card.allCard[j].id){
-//           //render image
-//           //render name
-//           //render description
-//       }
-//     }
-//   }
+  for(var i = 0; i <= 2; i++){
+    var idReference = Card.cardDeck[i].id;
+    for(var j = 0; j < Card.allCards.length; j++){
+      if(idReference === Card.allCards[j].id){
+        document.getElementById(`card${i}`).innerHTML = Card.allCards[j].name;
+      }
+    }
+  }
   Card.cardDeck.splice(0, 3);
   console.table(Card.cardDeck)
 }
