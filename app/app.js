@@ -1,7 +1,7 @@
 //Global Variables
 var health = 50;
 var hope = 50;
-var resources = 50;
+var resource = 50;
 var protection = 50;
 //Shuffle
 function shuffle(deck){
@@ -15,19 +15,61 @@ function shuffle(deck){
   }
   console.table(Card.cardDeck)
 }
-function updateStat(stat, operation, value){
-    console.log(stat);
+function updateStats(){
+  document.getElementById('hopeBar').textContent = hope;
+  document.getElementById('healthBar').textContent = health;
+  document.getElementById('resourceBar').textContent = resource;
+  document.getElementById('protectionBar').textContent = protection;
+}
+function updateHope(operation, value){
   if(operation === 'add'){
-    stat += value;
+    hope += value;
   }
   if(operation === 'minus'){
-    stat -= value;
+    hope -= value;
   }
   if(operation === 'set'){
-    stat = value
+    hope = value
   }
-  document.getElementById(stat+'Bar').innerHTML = stat;
+  updateStats();
 }
+function updateHealth(operation, value){
+  if(operation === 'add'){
+    health += value;
+  }
+  if(operation === 'minus'){
+    health -= value;
+  }
+  if(operation === 'set'){
+    health = value
+  }
+  updateStats();
+}
+function updateResources(operation, value){
+  if(operation === 'add'){
+    resource += value;
+  }
+  if(operation === 'minus'){
+    resource -= value;
+  }
+  if(operation === 'set'){
+    resource = value
+  }
+  updateStats();
+}
+function updateProtection(operation, value){
+  if(operation === 'add'){
+    protection += value;
+  }
+  if(operation === 'minus'){
+    protection -= value;
+  }
+  if(operation === 'set'){
+    protection = value
+  }
+  updateStats();
+}
+
 
 function drawPhase(){
 //render first three cards in Card.cardDeck to page
