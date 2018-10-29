@@ -1,6 +1,9 @@
 html {
     box-sizing: border-box;
   }
+  body{
+      background-color: #ebd5d3;
+  }
   
   .column {
     float: center;
