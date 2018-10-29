@@ -20,7 +20,7 @@ function card1(){
 }
 new Card(2, 'Get mauled','', 'Drop to 1 hp')
 function card2(){
-  health = 1;
+  updateHealth('set', 1);
 }
 new Card(3, 'find/witness bad thing' ,'', 'Drop to 1 hope');
 function card3(){
