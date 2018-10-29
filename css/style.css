@@ -40,7 +40,7 @@ background-color: #ebd5d3;
   }
   
   .container {
-    padding: 0 15px;
+    padding: 2 16px;
   }
   
   .button {
@@ -59,3 +59,8 @@ background-color: #ebd5d3;
     background-color: #555;
   }
   
+  #game_title {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 48px;
+  }
