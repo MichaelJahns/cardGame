@@ -35,10 +35,10 @@ Card.functions = {
 //Nightmare Card
 new Card(1, 'Meet Death', 'You are strong child, but I am beyond strength ', 'all survival stats set to zero');
 function card1(){
-  health = 0;
-  hope = 0;
-  resources = 0;
-  protection = 0;
+  updateHealth('set', 0);
+  updateHope('set', 0)
+  updateResources('set', 0)
+  updateProtection('set', 0)
 }
 new Card(2, 'Get mauled','', 'Drop to 1 hp')
 function card2(){
@@ -105,7 +105,7 @@ function card15(){
   updateResources('minus', 15);
   updateProtection('add', 15);
 }
-new Card(16, 'Bad Water ','--hope +hp')
+new Card(16, 'Bad Water' , '--hope +hp')
 function card16(){
   updateHope('minus', 25);
   updateHealth('add', 10);

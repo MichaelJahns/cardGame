@@ -5,16 +5,14 @@ var resource = 50;
 var protection = 50;
 //Shuffle
 function shuffle(deck){
-  console.table(Card.allCards)
+  console.log(`Deck Reshuffled`)
   Card.cardDeck = deck.slice(0);
-  console.table(Card.cardDeck)
   for (var i = Card.cardDeck.length - 1; i > 0; i--) {
     var randomPosition = Math.floor(Math.random() * (i + 1));
     var temp = Card.cardDeck[i];
     Card.cardDeck[i] = Card.cardDeck[randomPosition];
     Card.cardDeck[randomPosition] = temp;
   }
-  console.table(Card.cardDeck)
 }
 function updateStats(){
   document.getElementById('hopeBar').textContent = hope;
@@ -74,6 +72,9 @@ function updateProtection(operation, value){
 
 function drawPhase(){
 //render first three cards in Card.cardDeck to page
+  if(Card.cardDeck.length < 3){
+    shuffle(Card.allCards);
+  }
   for(var i = 0; i <= 2; i++){
     var idReference = Card.cardDeck[i].id;
     for(var j = 0; j < Card.allCards.length; j++){
@@ -83,7 +84,6 @@ function drawPhase(){
     }
   }
   Card.cardDeck.splice(0, 3);
-  console.table(Card.cardDeck)
 }
 
 function handleStart(event){
@@ -95,11 +95,10 @@ function handleSelection(){
   if(event.target.className === 'card'){
     for(var i = 0; i < Card.allCards.length; i++){
       if(event.target.innerText === Card.allCards[i].name)
-      var temp = Card.allCards[i].id;
-      console.log(temp);
-      console.log(Card.functions[temp])
-    }
-    Card.functions[temp]();
+      var temp = Card.allCards[i].id; 
+      }  
+      Card.functions[temp]();
+      drawPhase();
   }
 
 
