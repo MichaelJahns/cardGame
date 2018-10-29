@@ -15,6 +15,19 @@ function shuffle(deck){
   }
   console.table(Card.cardDeck)
 }
+function updateStat(stat, operation, value){
+    console.log(stat);
+  if(operation === 'add'){
+    stat += value;
+  }
+  if(operation === 'minus'){
+    stat -= value;
+  }
+  if(operation === 'set'){
+    stat = value
+  }
+  document.getElementById(stat+'Bar').innerHTML = stat;
+}
 
 function drawPhase(){
 //render first three cards in Card.cardDeck to page
