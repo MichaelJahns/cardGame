@@ -1,23 +1,25 @@
 
-    <link rel="stylesheet"  href="css/reset.css" />
-    <link rel="stylesheet"  href="css/style.css" /> 
-    <link rel="stylesheet"  href="css/card.css" />
-       
+<link rel="stylesheet"  href="css/reset.css" />
+<link rel="stylesheet"  href="css/style.css" /> 
+<link rel="stylesheet"  href="css/card.css" />
+      
+    <button id=start>Start Game</button>
+<header>
+   <h2> Health    <span id=healthBar>    50</span></h2>
+   <h2> Hope      <span id=hopeBar>      50</span></h2>
+   <h2> Resources <span id=resourceBar>  50</span></h2>
+   <h2> Protection<span id=protectionBar>50</span></h2>
+</header>
 
-  
-    <ul>
-        <li><a href="health.asp">Health</a></li>
-        <li><a href="hope.asp">Hope</a></li>
-        <li><a href="resources.asp">Resources</a></li>
-        <li><a href="shelter.asp">Shelter</a></li>
-        
+<main>
     <div class= "container">
-      <div class=card><h2><b> Card one</b></h2>
-      </div>
-      <div class= card><h2><b> Card two</b></h2>
-      </div>
-    <div class= card><h2><b> Card three</b></h2>
-      </div>
+      <div id = card0> Card One   </div>
+      <div id = card1> Card Two   </div>
+      <div id = card2> Card Three </div>
     </div>
+</main>
   
+    
+<script src=app/constructor.js></script>
+<script src=app/app.js></script>
 
