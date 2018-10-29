@@ -1,13 +1,15 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #ebd5d3;
   }
   
-  .nav_menu {
+  nav {
     overflow: hidden;
     background-color: rgb(240, 234, 234);
+    font-weight: bold;
   }
   
-  .nav_menu a {
+  nav a {
     float: left;
     color: #c7af6c;
     text-align: center;
