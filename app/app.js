@@ -79,7 +79,6 @@ function drawPhase(){
     for(var j = 0; j < Card.allCards.length; j++){
       if(idReference === Card.allCards[j].id){
         document.getElementById(`card${i}title`).innerHTML = Card.allCards[j].name;
-        document.getElementById(`card${i}id`).innerHTML = Card.allCards[j].id;
       }
     }
   }
@@ -93,8 +92,18 @@ function handleStart(event){
   drawPhase();
 }
 function handleSelection(){
-    console.log('selection made')
-    console.log(event.target.id.innerHTML)
+  if(event.target.className === 'card'){
+    for(var i = 0; i < Card.allCards.length; i++){
+      if(event.target.innerText === Card.allCards[i].name)
+      var temp = Card.allCards[i].id;
+      console.log(temp);
+      console.log(Card.functions[temp])
+    }
+    Card.functions[temp]();
+  }
+
+
+
 }
 
 var startElement = document.getElementById('start');
