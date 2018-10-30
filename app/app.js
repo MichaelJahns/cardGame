@@ -3,6 +3,8 @@ var health = 50;
 var hope = 50;
 var resource = 50;
 var protection = 50;
+
+
 //Shuffle
 function shuffle(deck){
   console.log(`Deck Reshuffled`)
@@ -124,11 +126,22 @@ function saveState(){
   // localStorage.cacheStats = JSON.stringify(Card)
 }
 
+
+var totalClicks = 0;
+
+var button = document.getElementById('container');
+button.onclick = function(){
+  totalClicks += 1;
+  console.log(totalClicks);
+  localStorage.setItem('pastClicked', JSON.stringify(totalClicks));
+  document.getElementById('TotalClick').innerHTML = 'Turns Survived : ' + totalClicks;
+}
+
+
 function handleStart(event){
   console.log('event started')
   shuffle(Card.allCards);
   drawPhase();
-  
 }
 
 function handleSelection(){
@@ -138,6 +151,7 @@ function handleSelection(){
         var temp = Card.allCards[i].id;
     }
     Card.functions[temp]();
+    
     gameOverPage();
     drawPhase();
     saveState();
@@ -148,7 +162,11 @@ function handleSelection(){
     health === 0 || 
     resource === 0 ||
     protection === 0 ){
-      alert('You ran out of resources!')
+
+      alert('You lost. You ran out of resources!')
+      console.log(health, hope, resource, protection)
+      localStorage.setItem('endGameStats', JSON.stringify({'hope': hope, 'health':health, 'resource': resource, 'protection': protection, 'clicks':totalClicks}))
+      
       window.location.href = 'gameOver.html';
     }
   }
