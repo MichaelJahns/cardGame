@@ -2,6 +2,24 @@ html {
   box-sizing: border-box;
 }
 
+header{
+  text-shadow: 0 0 100px #ffffff,0 0 8px #008000,0 0 6px #0000ff; 
+  font-size: 28px; 
+  text-transform: uppercase;
+  justify-content: space-around;
+  display: flex;
+  padding-top: 20px;
+}
+button{
+  padding: 10px 10px;
+    text-shadow: 0 0 100px #ffffff,0 0 8px #008000,0 0 6px #0000ff; 
+    font-size: 28px; 
+    text-transform: uppercase;
+    justify-content: space-around;
+    display: flex;
+  
+}
+
 body {
 font-family: Arial, Helvetica, sans-serif;
 background-color: #ebd5d3;
