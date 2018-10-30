@@ -1,5 +1,5 @@
 
-function Card(id, name,storyline, description){
+function Card(id, name, storyline, description){
   this.id = id;
   this.name = name;
   this.storyline = storyline;
