@@ -76,7 +76,8 @@ function drawPhase(){
   if(Card.cardDeck.length < 3){
     shuffle(Card.allCards);
   }
-  Card.displayCard = Card.cardDeck.splice(0, 3);
+  Card.displayCard = Card.cardDeck.slice(0, 3);
+
   for(var i = 0; i <= 2; i++){
     var idReference = Card.cardDeck[i].id;
     for(var j = 0; j < Card.allCards.length; j++){
@@ -85,14 +86,14 @@ function drawPhase(){
       }
     }
   }
-  // Card.cardDeck.splice(0, 3);
+  Card.cardDeck.splice(0, 3);
 }
 
 function saveState(){
-  localStorage.cacheDisplay
-  localStorage.cacheDeck
-  localStorage.cacheAllCards
-  localStorage.cacheStats
+  localStorage.cacheDisplay = JSON.stringify(Card.displayCard)
+  localStorage.cacheDeck = JSON.stringify(Card.cardDeck)
+  localStorage.cacheAllCards = JSON.stringify(Card.allCards)
+  // localStorage.cacheStats = JSON.stringify(Card)
 }
 
 function handleStart(event){
@@ -104,14 +105,13 @@ function handleSelection(){
   if(event.target.className === 'card'){
     for(var i = 0; i < Card.allCards.length; i++){
       if(event.target.innerText === Card.allCards[i].name)
-      var temp = Card.allCards[i].id; 
-      }  
-      Card.functions[temp]();
-      drawPhase();
+        var temp = Card.allCards[i].id;
+    }
+    Card.functions[temp]();
+    console.table(Card.cardDeck)
+    drawPhase();
+    saveState();
   }
-
-
-
 }
 
 var startElement = document.getElementById('start');
