@@ -5,6 +5,7 @@ var resource = 50;
 var protection = 50;
 //Shuffle
 function shuffle(deck){
+  animateShuffle();
   console.log(`Deck Reshuffled`)
   Card.cardDeck = deck.slice(0);
   for (var i = Card.cardDeck.length - 1; i > 0; i--) {
@@ -104,6 +105,7 @@ function drawPhase(){
   if(Card.cardDeck.length < 3){
     shuffle(Card.allCards);
   }
+  animateDraw();
   Card.displayCard = Card.cardDeck.slice(0, 3);
 
   for(var i = 0; i <= 2; i++){
@@ -125,6 +127,9 @@ function saveState(){
 }
 
 function handleStart(event){
+  // Card.gameInProgress = true; IS THIS NECESSARY FOR GAME RESUME FUNCTIonalITy
+  document.getElementById('start').style.visibility = 'hidden';
+
   console.log('event started')
   shuffle(Card.allCards);
   drawPhase();
@@ -153,6 +158,7 @@ function handleSelection(){
     }
   }
 }
+
 
 var startElement = document.getElementById('start');
 var containerEL = document.getElementById('container');

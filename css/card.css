@@ -1,52 +1,158 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
-  transition: 0.4s;
+  transition: 0.4s all ease;
   width: 25%;
   float: left;
-  margin: 23px;
-  height: 90%;
-  background-color: grey
+  margin: 2.5%;
+  height: 120%;
+  background-color: grey;
+  transform: rotateX(20deg) scale(.8);
 }
 .card:hover {
   box-shadow: 0 28px 36px 0 rgba(91, 49, 102, 0.9);
+  cursor: pointer;
+  transform: rotate(0deg) scale(1.2) translateY(10px);
+  transition: .5s all ease;
+  z-index: 400;
 }
-.card div {
-  margin-top: 20px;
-}
-
 #container {
-  padding: 2px 16px;
-  display: inline-block;
-  outline: groove rgb(32, 29, 51) 5px;
-  margin: 86px;
-  width: 950px;
-  padding-right: 15px;
-  height: 300px; 
+  display: block;
+  margin: -30px auto 0 auto;
+  width: 90%;
+  height: 300px;
  }
+/* Deck */
+#deckContainer
+{
+  position: absolute;
+  bottom: 14%;
+  left:20%;
+}
 
- #deck0 {
-  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
-  transition: 0.4s;
-  width: 20%;
-  float: left;
-  margin: 23px;
-  height: 30%;
+
+#deck0 {
+  position: absolute;
+  height: 250px;
+  width: 240px;
+  background-color:rgb(143, 143, 143);
+  z-index: 3;
+  margin-top: 15px;
+  right: 10px;
   }
 
 #deck1 {
-  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
-  transition: 0.4s;
-  width: 20%;
-  float: left;
-  margin: 23px;
-  height: 30%;
+  position: absolute;
+  height: 250px;
+  width: 240px;
+  background-color:rgb(110, 108, 108);
+  z-index: 2;
+  margin-top: 10px;
+  right: 5px;
 }
 
 #deck2 {
-  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
-  transition: 0.4s;
-  width: 20%;
-  float: left;
-  margin: 23px;
-  height: 30%;
+  position: absolute;
+  height: 250px;
+  width: 240px;
+  background-color: rgb(95, 94, 94);
+  z-index: 1;
+  margin-top: 5px;
+  right: 0px;
+}
+#start
+{
+  cursor: pointer;
+  text-align: center;
+  align-content: center;
+  margin-top: 20px;
+  color: rgb(73, 71, 71);
+  content: hidden;
+}
+
+/* SHUFFLE ANIMATION */
+.animateDeck0
+{
+  animation: shuffle0 3s infinite
+}
+.animateDeck1
+{
+  animation: shuffle1 2s infinite
+}
+.animateDeck2
+{
+  animation: shuffle2 1.5s infinite
+}
+@keyframes shuffle0 {
+	0% {}
+	30% {
+    transform: translateY(-150px) translateX(150px) rotate(50deg) rotateY(50deg);
+    z-index: 0;
+	}
+	100% {
+		rotate(0deg);
+	}
+}
+@keyframes shuffle1 {
+  0%{}
+  30% {
+    transform: translateY(-200px);
+    z-index: 1;
+  }
+  100%{
+    rotate(0deg);
+  }
+}
+@keyframes shuffle2 {
+	0% {}
+	30% {
+    transform: translateY(-150px) translateX(-150px) rotate(-50deg) rotateY(-50deg);
+    z-index: 2;
+	}
+	100% {
+		rotate(0deg);
+	}
+}
+
+/* DRAW ANIMATION */
+.animateCard0
+{
+  animation: draw0 3s infinite
+}
+.animateCard1
+{
+  animation: draw1 2s infinite
+}
+.animateCard2
+{
+  animation: draw2 1.5s infinite
+}
+@keyframes draw0 {
+	0% {}
+	30% {
+    transform: translateY(-150px) translateX(150px) rotate(50deg) rotateY(50deg);
+    z-index: 0;
+	}
+	100% {
+		rotate(0deg);
+	}
+}
+@keyframes draw1 {
+  0%{}
+  30% {
+    transform: translateY(-200px);
+    z-index: 1;
+  }
+  100%{
+    rotate(0deg);
+  }
+}
+@keyframes draw2 {
+	0% {}
+	30% {
+    transform: translateY(-150px) translateX(-150px) rotate(-50deg) rotateY(-50deg);
+    z-index: 2;
+	}
+	100% {
+		rotate(0deg);
+	}
 }

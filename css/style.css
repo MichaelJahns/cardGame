@@ -3,7 +3,7 @@ html {
 }
 
 header{
-  text-shadow: 0 0 100px #ffffff,0 0 8px #008000,0 0 6px #0000ff; 
+  text-shadow: 0 0 100px #ffffff,0 0 8px #008000,0 0 6px rgb(44, 65, 53); 
   font-size: 28px; 
   text-transform: uppercase;
   justify-content: space-around;
