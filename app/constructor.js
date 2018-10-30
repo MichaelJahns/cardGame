@@ -9,14 +9,36 @@ function Card(id, name,storyline, description){
 }
 Card.allCards = [];
 Card.cardDeck = [];
+Card.functions = {
+  1: card1,
+  2: card2,
+  3: card3,
+  4: card4,
+  5: card5,
+  6: card6,
+  7: card7,
+  8: card8,
+  9: card9,
+  10: card10,
+  11: card11,
+  12: card12,
+  13: card13,
+  14: card14,
+  15: card15,
+  16: card16,
+  17: card17,
+  18: card18,
+  19: card19,
+  20: card20,
+}
 //++++++++++++++
 //Nightmare Card
 new Card(1, 'Meet Death', 'You are strong child, but I am beyond strength ', 'all survival stats set to zero');
 function card1(){
-  health = 0;
-  hope = 0;
-  resources = 0;
-  protection = 0;
+  updateHealth('set', 0);
+  updateHope('set', 0)
+  updateResources('set', 0)
+  updateProtection('set', 0)
 }
 new Card(2, 'Get mauled','', 'Drop to 1 hp')
 function card2(){
@@ -73,7 +95,7 @@ function card13(){
 }
 //++++++++++++++++++++++++++++++++++
 //Mostly Negative Hybrid Value Cards
-new Card(14, 'Meet merchant','He is selling apples', '-- resource + hp')
+new Card(14, 'Food merchant','He is selling apples', '-- resource + hp')
 function card14(){
   updateResources('minus', 20);
   updateHealth('add', 10);
@@ -83,7 +105,7 @@ function card15(){
   updateResources('minus', 15);
   updateProtection('add', 15);
 }
-new Card(16, 'Bad Water ','--hope +hp')
+new Card(16, 'Bad Water' , '--hope +hp')
 function card16(){
   updateHope('minus', 25);
   updateHealth('add', 10);
@@ -93,7 +115,7 @@ function card17(){
   updateProtection('minus', 30);
   updateHope('add', 20);
 }
-new Card(18, 'Find corpse' ,'Ew', '--hope +resources')
+new Card(18, 'Find corpse' ,'Ew', '--hope +resources', )
 function card18(){
   updateHope('minus', 20);
   updateResources('add', 15);
@@ -109,10 +131,10 @@ function card19(){
 
 //++++++++++++++++++
 //Triple Value Cards
-new Card(20, 'Meet merchant', 'He is selling warm clothes', '--- resource + protection +hope')
+new Card(20, 'Clothes merchant', 'He is selling warm clothes', '--- resource + protection +hope')
 function card20(){
   resource -= 30;
-  proteciton += 5;
+  protection += 5;
   hope += 5;
 }
 //++++++++++++++++++
