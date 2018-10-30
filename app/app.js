@@ -79,7 +79,7 @@ function drawPhase(){
     var idReference = Card.cardDeck[i].id;
     for(var j = 0; j < Card.allCards.length; j++){
       if(idReference === Card.allCards[j].id){
-        document.getElementById(`card${i}title`).innerHTML = Card.allCards[j].name;
+        document.getElementById(`card${i}`).innerHTML = Card.allCards[j].name;
       }
     }
   }
