@@ -115,19 +115,11 @@ function drawPhase(){
     for(var j = 0; j < Card.displayCard.length; j++){
       if(idReference === Card.displayCard[j].id){
         document.getElementById(`card${i}title`).innerHTML = Card.displayCard[j].name;
-//        document.getElementById(`card${i}img`).src = Card.displayCard[j].name;
+        //        document.getElementById(`card${i}img`).src = Card.displayCard[j].name;
         document.getElementById(`card${i}section`).innerHTML = Card.displayCard[j].storyline;
       }
     }
   }
-/*  for(var i = 0; i <= 2; i++){
-    var idReference = Card.cardDeck[i].id;
-    for(var j = 0; j < Card.allCards.length; j++){
-      if(idReference === Card.allCards[j].id){
-        document.getElementById(`card${i}`).innerHTML = Card.allCards[j].storyline;
-      }
-    }
-  }*/
   Card.cardDeck.splice(0, 3);
 }
 
@@ -161,16 +153,15 @@ function handleStart(event){
 }
 function handleSelection(){
   if(event.target.className === 'card'){
-    console.log(event.target.querySelector(`title`));
-/*    for(var i = 0; i < Card.allCards.length; i++){
-      if(event.target.innerText === Card.allCards[i].name)
+    for(var i = 0; i < Card.allCards.length; i++){
+      if(event.target.querySelector(`h2`).innerHTML === Card.allCards[i].name)
         var temp = Card.allCards[i].id;
     }
     Card.functions[temp]();
-    
+
     gameOverPage();
     drawPhase();
-    saveState(); */
+    saveState();
   }
   function gameOverPage(){
     if
@@ -182,7 +173,7 @@ function handleSelection(){
       alert('You lost. You ran out of resources!')
       console.log(health, hope, resource, protection)
       localStorage.setItem('endGameStats', JSON.stringify({'hope': hope, 'health':health, 'resource': resource, 'protection': protection, 'clicks':totalClicks}))
-      
+
       window.location.href = 'gameOver.html';
     }
   }
