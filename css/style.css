@@ -77,14 +77,30 @@ background-color: #ebd5d3;
     color: rgb(44, 65, 53);
   }
 
-  #play_game {
-    padding: 2px 16px;
+  #how_to_header {
+    font-family: 'Spicy Rice', cursive;
+    font-weight: 300;
+    font-size: 32px;
+    color: rgb(44, 65, 53);
+    margin-bottom: 20px;
+
+  }
+
+  #instructions {
+    font-family: 'Spicy Rice', cursive;
+    font-weight: 100;
+    font-size: 18px;
+    color: rgb(44, 65, 53);
+  }
+
+  #how_to_play {
+    padding: 25px;
     outline: groove rgb(32, 29, 51) 5px;
-    margin: 20px;
-    width: 950px;
+    margin: 25px 100px;
     padding-right: 15px;
-    height: 300px; 
+    height: 200px; 
     text-align: center;
+    line-height: 28px;
   }
 
   #top_scores {
@@ -103,7 +119,6 @@ background-color: #ebd5d3;
     font-size: 64px;
     color: rgb(44, 65, 53);
     padding: 2px 16px;
-    outline: groove rgb(32, 29, 51) 5px;
     margin: 20px;
     padding-right: 15px;
     height: 40px; 
