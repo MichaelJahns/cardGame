@@ -30,17 +30,31 @@ function updateHope(operation, value){
   if(operation === 'set'){
     hope = value
   }
+  if(hope < 0){
+    hope = 0;
+  }
+  if(hope > 100){
+    hope = 100;
+  }
   updateStats();
 }
 function updateHealth(operation, value){
   if(operation === 'add'){
     health += value;
+    
   }
   if(operation === 'minus'){
     health -= value;
+    
   }
   if(operation === 'set'){
     health = value
+  }
+  if(health < 0){
+    health = 0;
+  }
+  if(health > 100){
+    health = 100;
   }
   updateStats();
 }
@@ -54,17 +68,31 @@ function updateResources(operation, value){
   if(operation === 'set'){
     resource = value
   }
+  if(resource < 0){
+    resource = 0;
+  }
+  if(resource > 100){
+    resource = 100;
+  }
   updateStats();
 }
 function updateProtection(operation, value){
   if(operation === 'add'){
     protection += value;
+    
   }
   if(operation === 'minus'){
     protection -= value;
+    
   }
   if(operation === 'set'){
     protection = value
+  }
+  if(protection < 0){
+    protection = 0;
+  }
+  if(protection > 100){
+    protection = 100;
   }
   updateStats();
 }
@@ -90,19 +118,32 @@ function handleStart(event){
   console.log('event started')
   shuffle(Card.allCards);
   drawPhase();
+  
 }
+
 function handleSelection(){
   if(event.target.className === 'card'){
     for(var i = 0; i < Card.allCards.length; i++){
       if(event.target.innerText === Card.allCards[i].name)
-      var temp = Card.allCards[i].id; 
-      }  
-      Card.functions[temp]();
-      drawPhase();
+        var temp = Card.allCards[i].id; 
+    }  
+    Card.functions[temp]();
+    gameOverPage();
+    drawPhase();
+    
   }
 
+}
 
-
+function gameOverPage(){
+  if
+  (hope === 0 || 
+  health === 0 || 
+  resource === 0 ||
+  protection === 0 ){
+    alert('You ran out of resources!')
+    window.location.href = 'gameOver.html';
+  }
 }
 
 var startElement = document.getElementById('start');
