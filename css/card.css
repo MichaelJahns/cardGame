@@ -2,16 +2,13 @@
   box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
   transition: 0.4s;
   width: 25%;
-<<<<<<< HEAD
-=======
-
->>>>>>> 8c98fbeb66265d7be306cacb7ad10c3db9372ed5
   float: left;
   margin: 23px;
   height: 90%;
+  background-color: grey
 }
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 28px 36px 0 rgba(91, 49, 102, 0.9);
 }
 .card div {
   margin-top: 20px;
@@ -20,7 +17,7 @@
 #container {
   padding: 2px 16px;
   display: inline-block;
-  outline: groove rgb(60, 73, 116) 5px;
+  outline: groove rgb(32, 29, 51) 5px;
   margin: 86px;
   width: 950px;
   padding-right: 15px;
