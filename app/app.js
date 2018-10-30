@@ -51,9 +51,6 @@ function updateHealth(operation, value){
   if(operation === 'set'){
     health = value
   }
-<<<<<<< HEAD
-  updateStats()
-=======
   if(health < 0){
     health = 0;
   }
@@ -61,7 +58,6 @@ function updateHealth(operation, value){
     health = 100;
   }
   updateStats();
->>>>>>> 7b1eea2ebb420290c0937e0a3c5fa25bc52c54b0
 }
 function updateResources(operation, value){
   if(operation === 'add'){
