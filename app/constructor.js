@@ -135,9 +135,9 @@ function card19(){
 //Triple Value Cards
 new Card(20, 'Clothes merchant', 'He is selling warm clothes', '--- resource + protection +hope')
 function card20(){
-  resource -= 30;
-  protection += 5;
-  hope += 5;
+  updateResources('minus', 30);
+  updateProtection('add', 5);
+  updateHope('add', 5);
 }
 //++++++++++++++++++
 //Random Chance Card
