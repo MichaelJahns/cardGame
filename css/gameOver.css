@@ -10,6 +10,40 @@ div {
   color: red;
 }
 
+form{
+ text-shadow: 0 0 200px #ffffff,0 0 80px #008000,0 0 6px #0000ff; 
+ font-size: 30px;
+ margin: 0 auto;
+ text-align: center;
+}
+
+button{
+  padding: 10px 10px;
+  text-shadow: 0 0 200px #ffffff,0 0 80px #008000,0 0 6px #0000ff; 
+  display: flex;
+  font-size: 20px;
+  margin:auto;
+  
+}
+
+input[type=text], select {
+  width: 50%;
+  font-size: 30px;
+  font-style: bold;
+  padding: 12px 20px;
+  text-shadow: 0 0 200px #ffffff,0 0 80px #008000,0 0 6px #0000ff; 
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  
+}
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+}
+
 nav{
   text-shadow: 0 0 100px #ffffff,0 0 8px #008000,0 0 6px #0000ff; 
   font-size: 28px; 
