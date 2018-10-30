@@ -9,6 +9,7 @@ function Card(id, name,storyline, description){
 }
 Card.allCards = [];
 Card.cardDeck = [];
+Card.displayCard = [];
 Card.functions = {
   1: card1,
   2: card2,

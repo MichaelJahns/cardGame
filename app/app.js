@@ -13,6 +13,7 @@ function shuffle(deck){
     Card.cardDeck[i] = Card.cardDeck[randomPosition];
     Card.cardDeck[randomPosition] = temp;
   }
+  console.table(Card.cardDeck)
 }
 function updateStats(){
   document.getElementById('hopeBar').textContent = hope;
@@ -42,7 +43,7 @@ function updateHealth(operation, value){
   if(operation === 'set'){
     health = value
   }
-  updateStats();
+  updateStats()
 }
 function updateResources(operation, value){
   if(operation === 'add'){
@@ -75,6 +76,7 @@ function drawPhase(){
   if(Card.cardDeck.length < 3){
     shuffle(Card.allCards);
   }
+  Card.displayCard = Card.cardDeck.splice(0, 3);
   for(var i = 0; i <= 2; i++){
     var idReference = Card.cardDeck[i].id;
     for(var j = 0; j < Card.allCards.length; j++){
@@ -83,7 +85,14 @@ function drawPhase(){
       }
     }
   }
-  Card.cardDeck.splice(0, 3);
+  // Card.cardDeck.splice(0, 3);
+}
+
+function saveState(){
+  localStorage.cacheDisplay
+  localStorage.cacheDeck
+  localStorage.cacheAllCards
+  localStorage.cacheStats
 }
 
 function handleStart(event){
