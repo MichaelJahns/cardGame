@@ -78,10 +78,34 @@ background-color: #ebd5d3;
   }
 
   #play_game {
+    padding: 2px 16px;
+    outline: groove rgb(32, 29, 51) 5px;
+    margin: 20px;
+    width: 950px;
+    padding-right: 15px;
+    height: 300px; 
     text-align: center;
-    margin-top: 200px;
   }
 
   #top_scores {
+    padding: 2px 16px;
+    outline: groove rgb(32, 29, 51) 5px;
+    margin: 86px;
+    width: 950px;
+    padding-right: 15px;
+    height: 300px; 
+  }
 
+  #game_link {
+    text-align: center;
+    font-family: 'Spicy Rice', cursive;
+    font-weight: 500;
+    font-size: 64px;
+    color: rgb(44, 65, 53);
+    padding: 2px 16px;
+    outline: groove rgb(32, 29, 51) 5px;
+    margin: 20px;
+    padding-right: 15px;
+    height: 40px; 
+    text-align: center;
   }
