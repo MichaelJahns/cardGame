@@ -3,7 +3,7 @@ html {
 }
 
 header{
-  text-shadow: 0 0 100px #ffffff,0 0 8px #008000,0 0 6px #0000ff; 
+  text-shadow: 0 0 100px #ffffff,0 0 8px #008000,0 0 6px rgb(44, 65, 53); 
   font-size: 28px; 
   text-transform: uppercase;
   justify-content: space-around;
@@ -49,16 +49,6 @@ background-color: #ebd5d3;
     width: 30%;
     margin-bottom: 26px;
     padding: 0 8px;
-  }
-  
-  .card {
-    box-shadow: 3px 4px 8px 3px rgba(0, 0, 0, 5);
-    padding: 0 15px;
-    height: 50%;
-  }
-  
-  .container {
-    padding: 2 16px;
   }
   
   .button {
