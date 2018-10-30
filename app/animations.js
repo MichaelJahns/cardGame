@@ -1,8 +1,8 @@
 
 function stopShuffle(){
-  document.getElementById('deck0').className = ''
-  document.getElementById('deck1').className = ''
-  document.getElementById('deck2').className = ''
+  document.getElementById('deck0').className = 'deck'
+  document.getElementById('deck1').className = 'deck'
+  document.getElementById('deck2').className = 'deck'
 }
 function animateShuffle(){
   document.getElementById('deck0').className = 'animateDeck0'
@@ -12,12 +12,14 @@ function animateShuffle(){
 }
 
 function stopDraw(){
-  document.getElementById('card0').classname = ''
-  document.getElementById('card0').classname = ''
-  document.getElementById('card0').classname = ''
+  document.getElementById('deck0').className = 'deck'
+  document.getElementById('deck1').className = 'deck'
+  document.getElementById('deck2').className = 'deck'
 }
 function animateDraw(){
-  document.getElementById('card0').classname = 'animateCard0'
-  document.getElementById('card0').classname = 'animateCard1'
-  document.getElementById('card0').classname = 'animateCard2'
+    console.log('I was entered')
+  document.getElementById('deck0').className = 'animateCard0'
+  document.getElementById('deck1').className = 'animateCard1'
+  document.getElementById('deck2').className = 'animateCard2'
+  setTimeout(stopDraw, 1999)
 }

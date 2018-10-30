@@ -43,11 +43,11 @@ function updateHope(operation, value){
 function updateHealth(operation, value){
   if(operation === 'add'){
     health += value;
-    
+
   }
   if(operation === 'minus'){
     health -= value;
-    
+
   }
   if(operation === 'set'){
     health = value
@@ -81,11 +81,11 @@ function updateResources(operation, value){
 function updateProtection(operation, value){
   if(operation === 'add'){
     protection += value;
-    
+
   }
   if(operation === 'minus'){
     protection -= value;
-    
+
   }
   if(operation === 'set'){
     protection = value
@@ -132,10 +132,8 @@ function handleStart(event){
 
   console.log('event started')
   shuffle(Card.allCards);
-  drawPhase();
-  
+  setTimeout(drawPhase, 6000);
 }
-
 function handleSelection(){
   if(event.target.className === 'card'){
     for(var i = 0; i < Card.allCards.length; i++){
@@ -149,8 +147,8 @@ function handleSelection(){
   }
   function gameOverPage(){
     if
-    (hope === 0 || 
-    health === 0 || 
+    (hope === 0 ||
+    health === 0 ||
     resource === 0 ||
     protection === 0 ){
       alert('You ran out of resources!')

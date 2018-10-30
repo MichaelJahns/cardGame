@@ -1,17 +1,58 @@
-.card {
-  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
-  transition: 0.4s all ease;
-  width: 25%;
-  float: left;
+#card0 {
+  position: absolute;
+  
+  height: 250px;
+  width: 240px;
+
+  bottom: 14%;
+  left:40px;
+  
   margin: 2.5%;
-  height: 120%;
+
   background-color: grey;
-  transform: rotateX(20deg) scale(.8);
+  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
+
+  transform: rotateX(20deg) scale(1);
+  transition: 0.4s all ease;
+}
+#card1{
+  position: absolute;
+  
+  height: 250px;
+  width: 240px;
+
+  bottom: 14%;
+  left:460px;
+  
+  margin: 2.5%;
+
+  background-color: grey;
+  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
+
+  transform: rotateX(20deg) scale(1);
+  transition: 0.4s all ease;
+}
+#card2{
+  position: absolute;
+  
+  height: 250px;
+  width: 240px;
+
+  bottom: 14%;
+  left:900px;
+  
+  margin: 2.5%;
+
+  background-color: grey;
+  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
+
+  transform: rotateX(20deg) scale(1);
+  transition: 0.4s all ease;
 }
 .card:hover {
   box-shadow: 0 28px 36px 0 rgba(91, 49, 102, 0.9);
   cursor: pointer;
-  transform: rotate(0deg) scale(1.2) translateY(10px);
+  transform: rotate(0deg) scale(1.4) translateY(10px);
   transition: .5s all ease;
   z-index: 400;
 }
@@ -26,10 +67,8 @@
 {
   position: absolute;
   bottom: 14%;
-  left:20%;
+  left:30%;
 }
-
-
 #deck0 {
   position: absolute;
   height: 250px;
@@ -39,7 +78,6 @@
   margin-top: 15px;
   right: 10px;
   }
-
 #deck1 {
   position: absolute;
   height: 250px;
@@ -49,7 +87,6 @@
   margin-top: 10px;
   right: 5px;
 }
-
 #deck2 {
   position: absolute;
   height: 250px;
@@ -58,6 +95,15 @@
   z-index: 1;
   margin-top: 5px;
   right: 0px;
+}
+#deck3 {
+  position: absolute;
+  height: 250px;
+  width: 240px;
+  background-color: rgb(95, 94, 94);
+  z-index: 0;
+  margin-top: 0px;
+  right: -5px;
 }
 #start
 {
@@ -114,45 +160,25 @@
 }
 
 /* DRAW ANIMATION */
-.animateCard0
-{
-  animation: draw0 3s infinite
+.animateCard0{
+  animation: fancyDraw0 2s infinite
 }
-.animateCard1
-{
-  animation: draw1 2s infinite
+.animateCard1{
+  animation: fancyDraw1 2s infinite
 }
-.animateCard2
-{
-  animation: draw2 1.5s infinite
+.animateCard2{
+  animation: fancyDraw2 2s infinite
 }
-@keyframes draw0 {
-	0% {}
-	30% {
-    transform: translateY(-150px) translateX(150px) rotate(50deg) rotateY(50deg);
-    z-index: 0;
-	}
-	100% {
-		rotate(0deg);
-	}
+@keyframes fancyDraw0{
+  0%   {}
+  100% {transform: translateY(-280px) translateX(70px)}
 }
-@keyframes draw1 {
-  0%{}
-  30% {
-    transform: translateY(-200px);
-    z-index: 1;
-  }
-  100%{
-    rotate(0deg);
-  }
+@keyframes fancyDraw1{
+  0%   {}
+  100%  {transform: translateY(-280px) translateX(480px)}
 }
-@keyframes draw2 {
-	0% {}
-	30% {
-    transform: translateY(-150px) translateX(-150px) rotate(-50deg) rotateY(-50deg);
-    z-index: 2;
-	}
-	100% {
-		rotate(0deg);
-	}
+@keyframes fancyDraw2{
+  0%   {}
+  100% {transform: translateY(-280px) translateX(800px)}
+  
 }
