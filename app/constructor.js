@@ -10,6 +10,7 @@ function Card(id, name, storyline, description){
 Card.allCards = [];
 Card.cardDeck = [];
 Card.displayCard = [];
+Card.totalClicks = 0;
 Card.gameInProgress = false;
 Card.functions= {
   1: card1,

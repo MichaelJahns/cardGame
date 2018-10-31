@@ -32,7 +32,7 @@ function updateHope(operation, value){
     hope -= value;
   }
   if(operation === 'set'){
-    hope = value
+    hope = value;
   }
   if(hope < 0){
     hope = 0;
@@ -45,11 +45,9 @@ function updateHope(operation, value){
 function updateHealth(operation, value){
   if(operation === 'add'){
     health += value;
-
   }
   if(operation === 'minus'){
     health -= value;
-
   }
   if(operation === 'set'){
     health = value
@@ -130,15 +128,13 @@ function saveState(){
   // localStorage.cacheStats = JSON.stringify(Card)
 }
 
-
-var totalClicks = 0;
-
 var button = document.getElementById('container');
-button.onclick = function(){
-  totalClicks += 1;
-  console.log(totalClicks);
-  localStorage.setItem('pastClicked', JSON.stringify(totalClicks));
-  document.getElementById('TotalClick').innerHTML = 'Turns Survived : ' + totalClicks;
+
+function turnCounter(){
+  Card.totalClicks += 1;
+  console.log(Card.totalClicks);
+  localStorage.setItem('pastClicked', JSON.stringify(Card.totalClicks));
+  document.getElementById('TotalClick').innerHTML = 'Turns Survived : ' + Card.totalClicks;
 }
 
 
@@ -161,6 +157,7 @@ function handleSelection(){
 
     gameOverPage();
     drawPhase();
+    turnCounter();
     saveState();
   }
   function gameOverPage(){
@@ -172,13 +169,11 @@ function handleSelection(){
 
       alert('You lost. You ran out of resources!')
       console.log(health, hope, resource, protection)
-      localStorage.setItem('endGameStats', JSON.stringify({'hope': hope, 'health':health, 'resource': resource, 'protection': protection, 'clicks':totalClicks}))
-
+      localStorage.setItem('endGameStats', JSON.stringify({'hope': hope, 'health':health, 'resource': resource, 'protection': protection, 'clicks':Card.totalClicks}))
       window.location.href = 'gameOver.html';
     }
   }
 }
-
 
 var startElement = document.getElementById('start');
 var containerEL = document.getElementById('container');
