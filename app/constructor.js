@@ -183,7 +183,12 @@ function card21(){
     updateResources('add', 100);
   }
 
+lskdjfklksjfkj
+ kljdfjw
+ dkfj
 
+ dskljfjowkjef
+//  eff it
 //++++++++++++++++++
 //Random Chance Card
 // new Card('Approach stranger', 'make friend or get robbed' , '++ socialization OR -hope -socializtion')
