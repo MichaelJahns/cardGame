@@ -17,7 +17,7 @@
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
 
-  margin-left: 210px;
+  margin-left: 100px;
   margin-top: 260px;
 }
 #card1{
@@ -43,7 +43,7 @@
 
 }
 #card2{
-  position: static;
+  position: absolute;
 
   font-family: fantasy;
   
@@ -61,7 +61,7 @@
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
 
-  margin-left: 800px;
+  margin-left: 100px;
   margin-top:243px;
 }
 .card:hover {

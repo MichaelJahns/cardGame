@@ -170,8 +170,8 @@ function handleSelection(){
 
       alert('You lost. You ran out of resources!')
 
-      localStorage.setItem('userTurns', JSON.stringify({'clicks':totalClicks}))
-      console.log(totalClicks);
+      localStorage.setItem('userTurns', JSON.stringify({'clicks':Card.totalClicks}))
+      console.log(Card.totalClicks);
       console.log(localStorage.endGameStats);
       console.log(localStorage.submit);
       localStorage.setItem('endGameStats', JSON.stringify({'hope': hope, 'health':health, 'resource': resource, 'protection': protection, 'clicks':Card.totalClicks}))
