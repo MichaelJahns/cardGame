@@ -1,9 +1,5 @@
-//Global Variables
-var health = 50;
-var hope = 50;
-var resource = 50;
-var protection = 50;
-
+//Helper Functions
+//++++++++++++++++
 
 //Shuffle
 function shuffle(deck){
@@ -18,102 +14,22 @@ function shuffle(deck){
   }
   console.table(Card.cardDeck)
 }
-function updateStats(){
-  document.getElementById('hopeBar').textContent = hope;
-  document.getElementById('healthBar').textContent = health;
-  document.getElementById('resourceBar').textContent = resource;
-  document.getElementById('protectionBar').textContent = protection;
-}
-function updateHope(operation, value){
-  if(operation === 'add'){
-    hope += value;
-  }
-  if(operation === 'minus'){
-    hope -= value;
-  }
-  if(operation === 'set'){
-    hope = value;
-  }
-  if(hope < 0){
-    hope = 0;
-  }
-  if(hope > 100){
-    hope = 100;
-  }
-  updateStats();
-}
-function updateHealth(operation, value){
-  if(operation === 'add'){
-    health += value;
-  }
-  if(operation === 'minus'){
-    health -= value;
-  }
-  if(operation === 'set'){
-    health = value
-  }
-  if(health < 0){
-    health = 0;
-  }
-  if(health > 100){
-    health = 100;
-  }
-  updateStats();
-}
-function updateResources(operation, value){
-  if(operation === 'add'){
-    resource += value;
-  }
-  if(operation === 'minus'){
-    resource -= value;
-  }
-  if(operation === 'set'){
-    resource = value
-  }
-  if(resource < 0){
-    resource = 0;
-  }
-  if(resource > 100){
-    resource = 100;
-  }
-  updateStats();
-}
-function updateProtection(operation, value){
-  if(operation === 'add'){
-    protection += value;
-
-  }
-  if(operation === 'minus'){
-    protection -= value;
-
-  }
-  if(operation === 'set'){
-    protection = value
-  }
-  if(protection < 0){
-    protection = 0;
-  }
-  if(protection > 100){
-    protection = 100;
-  }
-  updateStats();
-}
-
 
 function drawPhase(){
-//render first three cards in Card.cardDeck to page
+  //Shuffle if cant draw three cards
   if(Card.cardDeck.length < 3){
     shuffle(Card.allCards);
   }
+  
   animateDraw();
+  
   Card.displayCard = Card.cardDeck.slice(0, 3);
-
   for(var i = 0; i <= 2; i++){
     var idReference = Card.cardDeck[i].id;
     for(var j = 0; j < Card.displayCard.length; j++){
       if(idReference === Card.displayCard[j].id){
         document.getElementById(`card${i}title`).innerHTML = Card.displayCard[j].name;
-        //        document.getElementById(`card${i}img`).src = Card.displayCard[j].name;
+        //document.getElementById(`card${i}img`).src = Card.displayCard[j].name;
         document.getElementById(`card${i}section`).innerHTML = Card.displayCard[j].storyline;
       }
     }
@@ -121,30 +37,110 @@ function drawPhase(){
   Card.cardDeck.splice(0, 3);
 }
 
+function turnCounter(){
+  Card.totalTurns += 1;
+  localStorage.setItem('pastClicked', JSON.stringify(Card.totalTurns));
+  document.getElementById('TotalClick').innerHTML = 'Turns Survived : ' + Card.totalTurns;
+}
+//Update Game Stats
+function updateStats(){
+  document.getElementById('hopeBar').textContent = Card.gamestats["hope"];
+  document.getElementById('healthBar').textContent = Card.gamestats["health"];
+  document.getElementById('resourceBar').textContent = Card.gamestats["resource"];
+  document.getElementById('protectionBar').textContent = Card.gamestats["protection"];
+}
+function updateHope(operation, value){
+  if(operation === 'add'){
+    Card.gamestats["hope"] += value;
+  }
+  if(operation === 'minus'){
+    Card.gamestats["hope"] -= value;
+  }
+  if(operation === 'set'){
+
+    Card.gamestats["hope"] = value
+  }
+  if(Card.gamestats["hope"] < 0){
+    Card.gamestats["hope"] = 0;
+  }
+  if(Card.gamestats["hope"] > 100){
+    Card.gamestats["hope"] = 100;
+  }
+  updateStats();
+}
+function updateHealth(operation, value){
+  if(operation === 'add'){
+    Card.gamestats["health"] += value;
+
+  }
+  if(operation === 'minus'){
+    Card.gamestats["health"] -= value;
+  }
+  if(operation === 'set'){
+    Card.gamestats["health"] = value
+  }
+  if(Card.gamestats["health"] < 0){
+    Card.gamestats["health"] = 0;
+  }
+  if(Card.gamestats["health"] > 100){
+    Card.gamestats["health"] = 100;
+  }
+  updateStats();
+}
+function updateResources(operation, value){
+  if(operation === 'add'){
+    Card.gamestats["resource"] += value;
+  }
+  if(operation === 'minus'){
+    Card.gamestats["resource"] -= value;
+  }
+  if(operation === 'set'){
+    Card.gamestats["resource"] = value
+  }
+  if(Card.gamestats["resource"] < 0){
+    Card.gamestats["resource"] = 0;
+  }
+  if(Card.gamestats["resource"] > 100){
+    Card.gamestats["resource"] = 100;
+  }
+  updateStats();
+}
+function updateProtection(operation, value){
+  if(operation === 'add'){
+    Card.gamestats["protection"] += value;
+
+  }
+  if(operation === 'minus'){
+    Card.gamestats["protection"] -= value;
+
+  }
+  if(operation === 'set'){
+    Card.gamestats["protection"] = value
+  }
+  if(Card.gamestats["protection"] < 0){
+    Card.gamestats["protection"] = 0;
+  }
+  if(Card.gamestats["protection"] > 100){
+    Card.gamestats["protection"] = 100;
+  }
+  updateStats();
+}
+//Data Permanence
 function saveState(){
+
   localStorage.cacheDisplay = JSON.stringify(Card.displayCard)
   localStorage.cacheDeck = JSON.stringify(Card.cardDeck)
   localStorage.cacheAllCards = JSON.stringify(Card.allCards)
-  // localStorage.cacheStats = JSON.stringify(Card)
+  localStorage.cacheStats = JSON.stringify(Card.gamestats)
 }
-
-var button = document.getElementById('container');
-
-function turnCounter(){
-  Card.totalClicks += 1;
-  console.log(Card.totalClicks);
-  localStorage.setItem('pastClicked', JSON.stringify(Card.totalClicks));
-  document.getElementById('TotalClick').innerHTML = 'Turns Survived : ' + Card.totalClicks;
-}
+//Event Handlers
+//++++++++++++++
 
 function handleStart(event){
   // Card.gameInProgress = true; IS THIS NECESSARY FOR GAME RESUME FUNCTIonalITy
   document.getElementById('start').style.visibility = 'hidden';
-
-  console.log('event started')
   shuffle(Card.allCards);
   setTimeout(drawPhase, 6000);
-
 }
 function handleSelection(){
   if(event.target.className === 'card'){
@@ -154,16 +150,14 @@ function handleSelection(){
     }
     Card.functions[temp]();
 
-    gameOverPage();
+    testForGameOver();
     drawPhase();
-
     turnCounter()
     // saveState();
 
   }
-  function gameOverPage(){
-    if
-    (hope === 0 ||
+  function testForGameOver(){
+    if(hope === 0 ||
       health === 0 ||
       resource === 0 ||
       protection === 0 ){
@@ -176,12 +170,15 @@ function handleSelection(){
       console.log(localStorage.submit);
       localStorage.setItem('endGameStats', JSON.stringify({'hope': hope, 'health':health, 'resource': resource, 'protection': protection, 'clicks':Card.totalClicks}))
 
+
       window.location.href = 'gameOver.html';
     }
   }
 }
+//++++++++++++++
+//ExecutableCode
+
 var startElement = document.getElementById('start');
 var containerEL = document.getElementById('container');
 startElement.addEventListener('click', handleStart);
 containerEL.addEventListener('click', handleSelection);
-
