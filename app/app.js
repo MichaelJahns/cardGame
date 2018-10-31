@@ -130,8 +130,7 @@ function saveState(){
   // localStorage.cacheStats = JSON.stringify(Card)
 }
 
-
-var totalClicks = 0;
+var totalClicks = 0; //REFERENCE FOR HIGHSCORE PAGE
 
 var button = document.getElementById('container');
 button.onclick = function(){
@@ -140,7 +139,6 @@ button.onclick = function(){
   localStorage.setItem('pastClicked', JSON.stringify(totalClicks));
   document.getElementById('TotalClick').innerHTML = 'Turns Survived : ' + totalClicks;
 }
-
 
 function handleStart(event){
   // Card.gameInProgress = true; IS THIS NECESSARY FOR GAME RESUME FUNCTIonalITy
@@ -161,25 +159,27 @@ function handleSelection(){
 
     gameOverPage();
     drawPhase();
-    saveState();
+    // saveState();
   }
   function gameOverPage(){
     if
     (hope === 0 ||
-    health === 0 ||
-    resource === 0 ||
-    protection === 0 ){
+      health === 0 ||
+      resource === 0 ||
+      protection === 0 ){
 
       alert('You lost. You ran out of resources!')
       console.log(health, hope, resource, protection)
-      localStorage.setItem('endGameStats', JSON.stringify({'hope': hope, 'health':health, 'resource': resource, 'protection': protection, 'clicks':totalClicks}))
-
+      localStorage.setItem('endGameStats', JSON.stringify({'clicks':totalClicks}))
+      console.log(totalClicks);
+      console.log(localStorage.endGameStats);
+      console.log(localStorage.submit);
+      
       window.location.href = 'gameOver.html';
     }
   }
 }
-
-
+  
 var startElement = document.getElementById('start');
 var containerEL = document.getElementById('container');
 startElement.addEventListener('click', handleStart);

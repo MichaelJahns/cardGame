@@ -112,12 +112,13 @@ background-color: #ebd5d3;
   }
 
   #top_scores {
-    padding: 2px 16px;
+    padding: 15px;
     outline: groove rgb(32, 29, 51) 5px;
-    margin: 86px;
-    width: 950px;
+    margin: 25px 100px;
     padding-right: 15px;
-    height: 300px; 
+    height: 270px; 
+    text-align: center;
+    line-height: 24px;
   }
 
   #game_link {
