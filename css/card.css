@@ -1,5 +1,6 @@
 #card0 {
   position: absolute;
+  display: none;
   
   height: 250px;
   width: 240px;
@@ -17,6 +18,7 @@
 }
 #card1{
   position: absolute;
+  display: none;
   
   height: 250px;
   width: 240px;
@@ -34,7 +36,8 @@
 }
 #card2{
   position: absolute;
-  
+  display: none;
+
   height: 250px;
   width: 240px;
 

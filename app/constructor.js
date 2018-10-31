@@ -7,10 +7,17 @@ function Card(id, name, storyline, description){
 
   Card.allCards.push(this);
 }
+Card.totalTurns = 0;
+Card.gameInProgress = false;
 Card.allCards = [];
 Card.cardDeck = [];
 Card.displayCard = [];
-Card.gameInProgress = false;
+Card.gamestats = {
+  health: 50,
+  hope: 50,
+  resource: 50,
+  protection: 50
+}
 Card.functions= {
   1: card1,
   2: card2,
