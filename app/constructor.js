@@ -39,6 +39,17 @@ Card.functions= {
   18: card18,
   19: card19,
   20: card20,
+  21: card21,
+  22: card22,
+  23: card23,
+  24: card24,
+  25: card25,
+  26: card26,
+  27: card27,
+  28: card28,
+  29: card29,
+  30: card30,
+
 }
 //++++++++++++++
 //Nightmare Card
@@ -146,6 +157,33 @@ function card20(){
   updateProtection('add', 5);
   updateHope('add', 5);
 }
+
+// Expansion
+// +++++++++++++++++++++++++++
+new Card(21, 'Befriend Merchant', 'It is willing to trade.', 'Adds merchant expansion cards')
+function card21(){
+  new Card(22,'Meet merchant by a pond', 'Merchant is selling elixirs. Do you buy one?', '++ health -- resources')
+  new Card(23, 'Stumble upon Merchant trapped in bog', 'You choose to help and Merchant offers a sharp knife', '++ protection -- health' )
+  new Card(24, 'Fight Merchant', 'You receive the beating of your lifetime. However, you manage to stab him in the heart', 'Drop to 1 hp and up 100 resources')
+  new Card(25, 'Merchant offers non FDA approved elixir', 'The bottle looks disgusting, but you drink it anyway. Merchant is incredibley charming after all.' , 'Drop to 1 hp and up 100 hope')
+  }
+
+  function card22() {
+    updateResources('minus', 10);
+    updateHealth('add', 20);
+  }
+
+  function card23() {
+    updateProtection('add', 30);
+    updateHealth('minus', 10);
+  }
+
+  function card24(){
+    updateHealth('set', 1);
+    updateResources('add', 100);
+  }
+
+
 //++++++++++++++++++
 //Random Chance Card
 // new Card('Approach stranger', 'make friend or get robbed' , '++ socialization OR -hope -socializtion')
