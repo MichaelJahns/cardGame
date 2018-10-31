@@ -42,19 +42,19 @@ function card1(){
   updateResources('set', 0)
   updateProtection('set', 0)
 }
-new Card(2, 'Get mauled','', 'Drop to 1 hp')
+new Card(2, 'Get mauled','You barely get away with your life.', 'Drop to 1 hp')
 function card2(){
   updateHealth('set', 1);
 }
-new Card(3, 'find/witness bad thing' ,'', 'Drop to 1 hope');
+new Card(3, 'find/witness bad thing' ,'You loose almost all hope', 'Drop to 1 hope');
 function card3(){
   updateHope('set', 1);
 }
-new Card(4, 'Get Robbed', '', 'Drop to 1 resources');
+new Card(4, 'Get Robbed', 'They took almost everything.', 'Drop to 1 resources');
 function card4(){
   updateResources('set', 1);
 }
-new Card(5, 'Lose shelter','', 'Drop to 1 protection')
+new Card(5, 'Lose shelter','You have to brave the elements', 'Drop to 1 protection')
 function card5(){
   updateProtection('set', 1);
 }
@@ -79,7 +79,7 @@ function card9(){
 }
 //++++++++++++++++++
 //Net Negative Cards
-new Card(10, 'Bear.', 'The local wildlife', '--hp')
+new Card(10, 'Beast', 'You have a brush with the local wildlife.', '--hp')
 function card10(){
   updateHealth('minus', 15);
 }
@@ -91,7 +91,7 @@ new Card(12, 'Banditos', 'Your stash was pilfered', '--resources')
 function card12(){
   updateResources('minus', 15);
 }
-new Card(13, 'Shelter destroyed', '', '--Protection')
+new Card(13, 'Shelter destroyed', 'You have to build another shelter from scratch.', '--Protection')
 function card13(){
   updateProtection('minus', 15);
 }
@@ -107,17 +107,17 @@ function card15(){
   updateResources('minus', 15);
   updateProtection('add', 15);
 }
-new Card(16, 'Bad Water' , '--hope +hp')
+new Card(16, 'Bad Water' ,'It taste funny, but hydrating' , '--hope +hp')
 function card16(){
   updateHope('minus', 25);
   updateHealth('add', 10);
 }
-new Card(17, 'Chased fun thing','','--protection +hope')
+new Card(17, 'Chased fun thing','You are lost but you are in high spirits.','--protection +hope')
 function card17(){
   updateProtection('minus', 30);
   updateHope('add', 20);
 }
-new Card(18, 'Find corpse' ,'Ew', '--hope +resources', )
+new Card(18, 'Find corpse' ,'You feel dispair in the pit of your stomach, but loot the corpse.', '--hope +resources', )
 function card18(){
   updateHope('minus', 20);
   updateResources('add', 15);

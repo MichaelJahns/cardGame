@@ -1,5 +1,7 @@
 #card0 {
   position: absolute;
+
+  font-family: fantasy;
   
   height: 250px;
   width: 240px;
@@ -9,14 +11,19 @@
   
   margin: 2.5%;
 
-  background-color: grey;
+  background-color: rgb(142, 146, 99);
   box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
 
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
+
+  margin-left: 210px;
+  margin-top: 260px;
 }
 #card1{
   position: absolute;
+
+  font-family: fantasy;
   
   height: 250px;
   width: 240px;
@@ -26,28 +33,36 @@
   
   margin: 2.5%;
 
-  background-color: grey;
+  background-color: rgb(142, 146, 99);
   box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
 
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
+
+  margin-left: 100px;
+
 }
 #card2{
-  position: absolute;
+  position: static;
+
+  font-family: fantasy;
   
   height: 250px;
   width: 240px;
 
   bottom: 14%;
-  left:900px;
+  left:950px;
   
   margin: 2.5%;
 
-  background-color: grey;
+  background-color: rgb(142, 146, 99);
   box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
 
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
+
+  margin-left: 800px;
+  margin-top:243px;
 }
 .card:hover {
   box-shadow: 0 28px 36px 0 rgba(91, 49, 102, 0.9);
@@ -73,7 +88,8 @@
   position: absolute;
   height: 250px;
   width: 240px;
-  background-color:rgb(143, 143, 143);
+  background-color:rgb(142, 146, 99);
+  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
   z-index: 3;
   margin-top: 15px;
   right: 10px;
@@ -82,7 +98,8 @@
   position: absolute;
   height: 250px;
   width: 240px;
-  background-color:rgb(110, 108, 108);
+  background-color:rgb(142, 146, 99);
+  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
   z-index: 2;
   margin-top: 10px;
   right: 5px;
@@ -91,7 +108,8 @@
   position: absolute;
   height: 250px;
   width: 240px;
-  background-color: rgb(95, 94, 94);
+  background-color: rgb(142, 146, 99);
+  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
   z-index: 1;
   margin-top: 5px;
   right: 0px;
@@ -100,7 +118,9 @@
   position: absolute;
   height: 250px;
   width: 240px;
-  background-color: rgb(95, 94, 94);
+  background-color: rgb(142, 146, 99);
+  box-shadow: 0 4px 8px 0 rgba( 0,0,0,0.4);
+
   z-index: 0;
   margin-top: 0px;
   right: -5px;
@@ -131,7 +151,7 @@
 @keyframes shuffle0 {
 	0% {}
 	30% {
-    transform: translateY(-150px) translateX(150px) rotate(50deg) rotateY(50deg);
+    transform: translateY(150px) translateX(150px) rotate(50deg) rotateY(50deg);
     z-index: 0;
 	}
 	100% {
@@ -171,14 +191,14 @@
 }
 @keyframes fancyDraw0{
   0%   {}
-  100% {transform: translateY(-280px) translateX(70px)}
+  100% {transform: translateY(-290px) translateX(95px)}
 }
 @keyframes fancyDraw1{
   0%   {}
-  100%  {transform: translateY(-280px) translateX(480px)}
+  100%  {transform: translateY(-290px) translateX(400px)}
 }
 @keyframes fancyDraw2{
   0%   {}
-  100% {transform: translateY(-280px) translateX(800px)}
+  100% {transform: translateY(-280px) translateX(700px)}
   
 }
