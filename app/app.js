@@ -157,10 +157,7 @@ function handleSelection(){
 
   }
   function testForGameOver(){
-    if(hope === 0 ||
-      health === 0 ||
-      resource === 0 ||
-      protection === 0 ){
+    if(Card.gamestats["hope"] === 0 ||Card.gamestats["health"] === 0 ||Card.gamestats["resource"] === 0 || Card.gamestats["protection"] === 0){
 
       alert('You lost. You ran out of resources!')
 
@@ -168,7 +165,7 @@ function handleSelection(){
       console.log(Card.totalClicks);
       console.log(localStorage.endGameStats);
       console.log(localStorage.submit);
-      localStorage.setItem('endGameStats', JSON.stringify({'hope': hope, 'health':health, 'resource': resource, 'protection': protection, 'clicks':Card.totalClicks}))
+      localStorage.setItem('endGameStats', JSON.stringify({'Card.gamestats["hope"]': Card.gamestats["hope"], 'Card.gamestats["health"]':Card.gamestats["health"], 'Card.gamestats["resource"]': Card.gamestats["resource"], 'Card.gamestats["protection"]': Card.gamestats["protection"], 'clicks':Card.totalClicks}))
 
 
       window.location.href = 'gameOver.html';
