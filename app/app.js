@@ -137,7 +137,6 @@ function turnCounter(){
   document.getElementById('TotalClick').innerHTML = 'Turns Survived : ' + Card.totalClicks;
 }
 
-
 function handleStart(event){
   // Card.gameInProgress = true; IS THIS NECESSARY FOR GAME RESUME FUNCTIonalITy
   document.getElementById('start').style.visibility = 'hidden';
@@ -157,24 +156,30 @@ function handleSelection(){
 
     gameOverPage();
     drawPhase();
-    turnCounter();
-    saveState();
+
+    turnCounter()
+    // saveState();
+
   }
   function gameOverPage(){
     if
     (hope === 0 ||
-    health === 0 ||
-    resource === 0 ||
-    protection === 0 ){
+      health === 0 ||
+      resource === 0 ||
+      protection === 0 ){
 
       alert('You lost. You ran out of resources!')
-      console.log(health, hope, resource, protection)
+
+      localStorage.setItem('userTurns', JSON.stringify({'clicks':totalClicks}))
+      console.log(totalClicks);
+      console.log(localStorage.endGameStats);
+      console.log(localStorage.submit);
       localStorage.setItem('endGameStats', JSON.stringify({'hope': hope, 'health':health, 'resource': resource, 'protection': protection, 'clicks':Card.totalClicks}))
+
       window.location.href = 'gameOver.html';
     }
   }
 }
-
 var startElement = document.getElementById('start');
 var containerEL = document.getElementById('container');
 startElement.addEventListener('click', handleStart);
