@@ -57,6 +57,7 @@ function updateHope(operation, value){
     Card.gamestats["hope"] -= value;
   }
   if(operation === 'set'){
+
     Card.gamestats["hope"] = value
   }
   if(Card.gamestats["hope"] < 0){
@@ -74,7 +75,6 @@ function updateHealth(operation, value){
   }
   if(operation === 'minus'){
     Card.gamestats["health"] -= value;
-
   }
   if(operation === 'set'){
     Card.gamestats["health"] = value
@@ -135,6 +135,7 @@ function saveState(){
 }
 //Event Handlers
 //++++++++++++++
+
 function handleStart(event){
   // Card.gameInProgress = true; IS THIS NECESSARY FOR GAME RESUME FUNCTIonalITy
   document.getElementById('start').style.visibility = 'hidden';
@@ -151,24 +152,32 @@ function handleSelection(){
 
     testForGameOver();
     drawPhase();
-    turnCounter();
-    saveState();
+    turnCounter()
+    // saveState();
+
   }
   function testForGameOver(){
-    if
-    (Card.gamestats["hope"] === 0 || Card.gamestats["health"] === 0 || Card.gamestats["resource"] === 0 || Card.gamestats["protection"] === 0 ){
+    if(hope === 0 ||
+      health === 0 ||
+      resource === 0 ||
+      protection === 0 ){
 
       alert('You lost. You ran out of resources!')
-      console.log(Card.gamestats["health"], Card.gamestats["hope"], Card.gamestats["resource"], Card.gamestats["protection"])
-      localStorage.setItem('endGameStats', JSON.stringify({'Card.gamestats["hope"]': Card.gamestats["hope"], 'Card.gamestats["health"]':Card.gamestats["health"], 'Card.gamestats["resource"]': Card.gamestats["resource"], 'Card.gamestats["protection"]': Card.gamestats["protection"], 'clicks':Card.totalTurns}))
+
+      localStorage.setItem('userTurns', JSON.stringify({'clicks':Card.totalClicks}))
+      console.log(Card.totalClicks);
+      console.log(localStorage.endGameStats);
+      console.log(localStorage.submit);
+      localStorage.setItem('endGameStats', JSON.stringify({'hope': hope, 'health':health, 'resource': resource, 'protection': protection, 'clicks':Card.totalClicks}))
+
 
       window.location.href = 'gameOver.html';
     }
   }
 }
-
 //++++++++++++++
 //ExecutableCode
+
 var startElement = document.getElementById('start');
 var containerEL = document.getElementById('container');
 startElement.addEventListener('click', handleStart);
