@@ -18,10 +18,10 @@ function animateShuffle(){
   setTimeout(stopShuffle, 6000)
 }
 function hideCards(){
-    touchDeck('card', 2, 'style', 'display:none', false)
+  touchDeck('card', 2, 'style', 'display:none', false)
 }
 function revealCards(){
-    touchDeck('card', 2, 'style', 'display:block', false)
+  touchDeck('card', 2, 'style', 'display:block', false)
 }
 function stopDraw(){
   touchDeck('deck', 2, 'class', 'deck', false)
