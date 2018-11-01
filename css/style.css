@@ -97,9 +97,10 @@ h1 {
 }
 
 #instructions {
-  font-family: 'Spicy Rice', cursive;
-  font-weight: 100;
-  font-size: 18px;
+  font-family: 'Spicy Rice', ;
+  font-weight: 120;
+  font-size: 25px;
+  text-shadow: #000;
   color: rgb(194, 204, 50);
 }
 
