@@ -143,16 +143,27 @@ function handleStart(event){
   setTimeout(drawPhase, 6000);
 }
 function handleSelection(){
-  for(var i = 0; i < Card.allCards.length; i++){
-    if(event.target.parentNode.querySelector(`h4`).innerHTML === Card.allCards[i].name)
-      var temp = Card.allCards[i].id;
+  if(event.target.className === 'card')
+  {
+    console.log(event.target.querySelector('h4'))
+    for(var i = 0; i < Card.allCards.length; i++){
+      if(event.target.querySelector(`h4`).innerHTML === Card.allCards[i].name)
+        var temp = Card.allCards[i].id;
+    }
+  }else{
+    console.log(event.target.parentNode.querySelector('h4'))
+    for(var i = 0; i < Card.allCards.length; i++){
+      if(event.target.parentNode.querySelector(`h4`).innerHTML === Card.allCards[i].name)
+        var temp = Card.allCards[i].id;
+    }
   }
+  console.log(temp)
   Card.functions[temp]();
 
-    testForGameOver();
-    drawPhase();
-    turnCounter()
-  //   // saveState();
+  setTimeout(testForGameOver, 300)
+  setTimeout(drawPhase, 300)
+  setTimeout(turnCounter, 300)
+  // saveState();
 
 }
 function testForGameOver(){

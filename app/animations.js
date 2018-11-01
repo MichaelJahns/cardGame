@@ -32,3 +32,9 @@ function animateDraw(){
   setTimeout(stopDraw, 1999)
   setTimeout(revealCards, 1999)
 }
+function highlightGain(){
+
+}
+function highlightLoss(){
+  
+}
