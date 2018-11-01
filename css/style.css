@@ -9,6 +9,7 @@ header{
   justify-content: space-around;
   display: flex;
   padding-top: 20px;
+  font-size: 3vw;
 }
 button{
   padding: 10px 10px;
@@ -17,7 +18,6 @@ button{
     text-transform: uppercase;
     justify-content: space-around;
     display: flex;
-  
 }
 
 body {
@@ -36,18 +36,18 @@ nav{
   overflow: hidden;
   }
   
-  nav a {
-    float: left;
-    color: #c7af6c;
-    text-align: center;
-    padding: 15px 20px;
-    font-size: 18px;
-  }
+nav a {
+  float: left;
+  color: #c7af6c;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 18px;
+}
   
-  .nav_menu a.active {
-    background-color: rgb(63, 30, 56);
-    color: white;
-  }
+.nav_menu a.active {
+  background-color: rgb(63, 30, 56);
+  color: white;
+}
   
   .column {
     float: center;
@@ -55,66 +55,63 @@ nav{
     margin-bottom: 26px;
   }
   
-  .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-  }
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
   
-  .button:hover {
-    background-color: #555;
-  }
+.button:hover {
+  background-color: #555;
+}
   
   
-  h1 {
-    margin: auto;
-    border: 4px solid rgb(63, 30, 56);
-    /*  border-top-left-radius: 50px;*/
-    border-bottom-left-radius: 150px;
-    border-bottom-right-radius: 150px;
-    width: 400px;    
-  }
+h1 {
+  margin: auto;
+  border: 4px solid rgb(63, 30, 56);
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  width: 400px;    
+}
   
-  #game_title {
-    text-align: center;
-    font-family: 'Spicy Rice', cursive;
-    font-weight: 500;
-    font-size: 64px;
-    color: rgb(194, 204, 50);
-  }
+#game_title {
+  text-align: center;
+  font-family: 'Spicy Rice', cursive;
+  font-weight: 500;
+  font-size: 64px;
+  color: rgb(194, 204, 50);
+}
 
-  #how_to_header {
-    font-family: 'Spicy Rice', cursive;
-    font-weight: 300;
-    font-size: 32px;
-    color: rgb(194, 204, 50);
-    margin-bottom: 20px;
+#how_to_header {
+  font-family: 'Spicy Rice', cursive;
+  font-weight: 300;
+  font-size: 32px;
+  color: rgb(194, 204, 50);
+  margin-bottom: 20px;
+}
 
-  }
+#instructions {
+  font-family: 'Spicy Rice', cursive;
+  font-weight: 100;
+  font-size: 18px;
+  color: rgb(194, 204, 50);
+}
 
-  #instructions {
-    font-family: 'Spicy Rice', cursive;
-    font-weight: 100;
-    font-size: 18px;
-    color: rgb(194, 204, 50);
-    
-  }
-
-  #how_to_play {
-    padding: 25px;
-    outline: groove rgb(63, 30, 56) 5px;
-    margin: 25px 100px;
-    padding-right: 15px;
-    height: 200px; 
-    text-align: center;
-    line-height: 28px;
-  }
+#how_to_play {
+  padding: 25px;
+  outline: groove rgb(63, 30, 56) 5px;
+  margin: 25px 100px;
+  padding-right: 15px;
+  height: 200px; 
+  text-align: center;
+  line-height: 28px;
+}
 
   #TotalClick {
     text-shadow: 0 0 100px #ffffff,0 0 8px #008000,0 0 6px rgb(44, 65, 53); 
@@ -137,15 +134,15 @@ nav{
     font-size: 24px;
   }
 
-  #game_link {
-    text-align: center;
-    font-family: 'Spicy Rice', cursive;
-    font-weight: 500;
-    font-size: 64px;
-    color: rgb(44, 65, 53);
-    padding: 2px 16px;
-    margin: 20px;
-    padding-right: 15px;
-    height: 40px; 
-    text-align: center;
-  }
+#game_link {
+  text-align: center;
+  font-family: 'Spicy Rice', cursive;
+  font-weight: 500;
+  font-size: 64px;
+  color: rgb(44, 65, 53);
+  padding: 2px 16px;
+  margin: 20px;
+  padding-right: 15px;
+  height: 40px; 
+  text-align: center;
+}

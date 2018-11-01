@@ -74,14 +74,7 @@ h1 {
   font-size: 64px;
   color: rgb(194, 204, 50);
 }
-/*
-h1{
-  text-shadow: 0 0 100px ghostwhite,0 0 40px FireBrick,0 0 8px DarkRed; 
-  text-align: center;
-  font-size: 59px;
-  text-shadow: 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff;
-}
-*/
+
 div p { margin:0; }
 #error:hover { text-shadow: 0 0 200px #ffffff,0 0 80px #008000,0 0 6px #0000ff; }
 #code:hover { text-shadow: 0 0 100px red,0 0 30px FireBrick,0 0 8px DarkRed; }
