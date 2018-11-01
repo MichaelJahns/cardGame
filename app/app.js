@@ -16,13 +16,7 @@ function shuffle(deck){
 }
 
 function drawPhase(){
-  //Shuffle if cant draw three cards
-  if(Card.cardDeck.length < 3){
-    shuffle(Card.allCards);
-  }
-
   animateDraw();
-
   Card.displayCard = Card.cardDeck.slice(0, 3);
   for(var i = 0; i <= 2; i++){
     var idReference = Card.cardDeck[i].id;
@@ -143,14 +137,6 @@ function updateProtection(operation, value){
   }
   updateStats();
 }
-//Data Permanence
-function saveState(){
-
-  localStorage.cacheDisplay = JSON.stringify(Card.displayCard)
-  localStorage.cacheDeck = JSON.stringify(Card.cardDeck)
-  localStorage.cacheAllCards = JSON.stringify(Card.allCards)
-  localStorage.cacheStats = JSON.stringify(Card.gamestats)
-}
 //Event Handlers
 //++++++++++++++
 
@@ -158,7 +144,7 @@ function handleStart(event){
   // Card.gameInProgress = true; IS THIS NECESSARY FOR GAME RESUME FUNCTIonalITy
   document.getElementById('start').style.visibility = 'hidden';
   shuffle(Card.allCards);
-  setTimeout(drawPhase, 6000);
+  setTimeout(drawPhase, 3000);
 }
 function handleSelection(){
   if(event.target.className === 'card')
@@ -179,8 +165,15 @@ function handleSelection(){
   Card.functions[temp]();
 
   setTimeout(testForGameOver, 300)
-  setTimeout(drawPhase, 300)
-  setTimeout(turnCounter, 300)
+  if(Card.cardDeck.length < 3){
+    hideCards();
+    shuffle(Card.allCards);
+    setTimeout(drawPhase, 3000)
+    setTimeout(turnCounter, 300)
+  }  else{
+    setTimeout(drawPhase, 300)
+    setTimeout(turnCounter, 300)
+  }
   // saveState();
 
 }
@@ -193,7 +186,7 @@ function testForGameOver(){
     localStorage.setItem('endGameStats', JSON.stringify({'Card.gamestats["hope"]': Card.gamestats['hope'], 'Card.gamestats["health"]':Card.gamestats['health'], 'Card.gamestats["resource"]': Card.gamestats['resource'], 'Card.gamestats["protection"]': Card.gamestats['protection'], 'clicks':Card.totalClicks}))
 
 
-    // window.location.href = 'gameOver.html';
+    window.location.href = 'gameOver.html';
   }
 }
 

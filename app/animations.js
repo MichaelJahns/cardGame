@@ -15,7 +15,7 @@ function stopShuffle(){
 }
 function animateShuffle(){
   touchDeck('deck', 2, 'class', `animateDeck`, true)
-  setTimeout(stopShuffle, 6000)
+  setTimeout(stopShuffle, 3000)
 }
 function hideCards(){
   touchDeck('card', 2, 'style', 'display:none', false)
