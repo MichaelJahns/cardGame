@@ -53,111 +53,114 @@ Card.functions= {
 }
 //++++++++++++++
 //Nightmare Card
-new Card(1, 'Meet Death', 'You are strong child, but I am beyond strength ', 'all survival stats set to zero');
+new Card(1, 'Approach Robed Stranger', 'You are strong child, but I am beyond strength', 'all survival stats set to zero');
 function card1(){
+  if(Card.gamestats["health"] === 100 || Card.gamestats["hope"] === 100 || Card.gamestats["resource"] === 100 || Card.gamestats["protection"] === 100){
+    alert("You are strong child. I will permit you past me this once. Speak of this to no one")
+  } else {
   updateHealth('set', 0);
   updateHope('set', 0)
   updateResources('set', 0)
   updateProtection('set', 0)
+  }
 }
-new Card(2, 'Get mauled','You barely get away with your life.', 'Drop to 1 hp')
+new Card(2, 'Large Footprints','You stumpble upon large footprints in the underbrush, and decide to track the beast.', 'Drop to 1 hp')
 function card2(){
   updateHealth('set', 1);
 }
-new Card(3, 'find/witness bad thing' ,'You loose almost all hope', 'Drop to 1 hope');
+new Card(3, 'Bad Omen' ,'Sky Darkens, Crow Caws, You lose all hope', 'Drop to 1 hope');
 function card3(){
   updateHope('set', 1);
 }
-new Card(4, 'Get Robbed', 'They took almost everything.', 'Drop to 1 resources');
+new Card(4, 'Encounter Highwaymen', 'Rogues and cut throats block your path.', 'Drop to 1 resources');
 function card4(){
   updateResources('set', 1);
 }
-new Card(5, 'Lose shelter','You have to brave the elements', 'Drop to 1 protection')
+new Card(5, 'Dark Skies','A storm growls in the distance, gale force winds render your shelter meaningless in its harsh rain', 'Drop to 1 protection')
 function card5(){
   updateProtection('set', 1);
 }
 
 //++++++++++++++++++
 //Net Positive Cards
-new Card(6, 'Good night Sleep', 'You slept well despite your pains', '+health')
+new Card(6, 'Good night Sleep', 'Despite your pains, you slept well and are ready for a new Day', '+health')
 function card6(){
   updateHealth('add', 5);
 }
-new Card(7, 'Signs of Society' , 'You see signs of soceity', '+hope');
+new Card(7, 'Signs of Society' , 'Smoke blooms overhead in a hundred gray pillars, you are hopefull you will find your way home', '+hope');
 function card7(){
   updateHope('add', 5);
 }
-new Card(8, 'find primitive weapon', 'find a sharp rock or club like stick', '+resource')
+new Card(8, 'Scrounge in a Quarry', 'Look for a primitive weapon; a sharp rock or club like stick', '+resource')
 function card8(){
   updateResources('add', 5);
 }
-new Card(9, 'Found shelter during storm', 'You find a place to weather to storm', '+ protection')
+new Card(9, 'Seek Shelter', 'A storm brews behind you, you need a place to weather to storm', '+ protection')
 function card9(){
   updateProtection('add', 5);
 }
 //++++++++++++++++++
 //Net Negative Cards
-new Card(10, 'Beast', 'You have a brush with the local wildlife.', '--hp')
+new Card(10, 'Beast', 'You have a brushin with the local wildlife.', '--hp')
 function card10(){
   updateHealth('minus', 15);
 }
-new Card(11, 'Solitude', 'you miss another human being' , '--hope')
+new Card(11, 'Solitude', 'Isolation of your stranded misadventures cling to you' , '--hope')
 function card11(){
   updateHope('minus', 15);
 }
-new Card(12, 'Banditos', 'Your stash was pilfered', '--resources')
+new Card(12, 'Roaming Banditos', 'Abandon your materials to avoid a run-in with the unsavory inhabitants of the woods', '--resources')
 function card12(){
   updateResources('minus', 15);
 }
-new Card(13, 'Shelter destroyed', 'You have to build another shelter from scratch.', '--Protection')
+new Card(13, 'Shrill Wind', 'The last storm destroyed your home, you have to build another shelter from scratch.', '--Protection')
 function card13(){
   updateProtection('minus', 15);
 }
 //++++++++++++++++++++++++++++++++++
 //Mostly Negative Hybrid Value Cards
-new Card(14, 'Food merchant','He is selling apples', '-- resource + hp')
+new Card(14, 'Food Caravan','Your path meets you with a food caravan. They wont take you into the city, but they will trade you some apples', '-- resource + hp')
 function card14(){
   updateResources('minus', 20);
   updateHealth('add', 10);
 }
-new Card(15, 'Build fire', 'You prepare for the elements', '--resource +protection')
+new Card(15, 'Create Hearth', 'Prepare for the long night by spending the twilight hours building a fire.', '--resource +protection')
 function card15(){
   updateResources('minus', 15);
   updateProtection('add', 15);
 }
-new Card(16, 'Bad Water' ,'It taste funny, but hydrating' , '--hope +hp')
+new Card(16, 'River Water' ,'It taste funny, but damn is it hydrating' , '--hope +hp')
 function card16(){
   updateHope('minus', 25);
   updateHealth('add', 10);
 }
-new Card(17, 'Chased fun thing','You are lost but you are in high spirits.','--protection +hope')
+new Card(17, 'Be Merry','You choose to forget your woes. Chase the butterflies, jump at the rainbows, dance in the rain','--protection +hope')
 function card17(){
   updateProtection('minus', 30);
   updateHope('add', 20);
 }
-new Card(18, 'Find corpse' ,'You feel dispair in the pit of your stomach, but loot the corpse.', '--hope +resources', )
+new Card(18, 'Corpse in the Clearing' ,'A well equipped corpse decays in a clearning. It looks like someone you once kew. Despair blossoms in your mind, but you loot the corpse.', '--hope +resources', )
 function card18(){
   updateHope('minus', 20);
   updateResources('add', 15);
 }
 //++++++++++++++++++++++++++++++++++
 //Mostly Positive Hybrid Value Cards
-new Card(19, 'Exhausting Hunt', 'You spend hours running down a deer', '++nutriton -hp')
+new Card(19, 'Exhausting Hunt', 'You chase your game for miles and miles, but your will to eat outmatches its survival instincts.', '++resource -hp')
 function card19(){
   updateResources('add', 25);
-  updateResources('minus', 10);
+  updateHealth('minus', 10);
 }
 
 
 //++++++++++++++++++
 //Triple Value Cards
-new Card(20, 'Clothes merchant', 'He is selling warm clothes', '--- resource + protection +hope')
+new Card(20, 'Wandering Vegabond', 'You chance upon a grizzled but friendly traveler coming from colder climates. They offer a trade for their thick winter coat', '--- resource + protection +hope')
 function card20(){
   updateResources('minus', 30);
   updateProtection('add', 5);
-  updateHope('add', 5);
+  updateHope('add',10);
 }
-
 // Expansion
 // +++++++++++++++++++++++++++
 new Card(21, 'Befriend Merchant', 'It is willing to trade.', 'Adds merchant expansion cards')
@@ -230,3 +233,4 @@ function card21(){
 //     }
 //     else{ -hope -socializiton}
 // }
+

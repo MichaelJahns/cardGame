@@ -3,11 +3,11 @@
   display: none;
   font-family: fantasy;
 
-  height: 250px;
-  width: 240px;
+  height: 50%;
+  width: 26%;
 
   bottom: 14%;
-  left:40px;
+  left:0%;
   
   margin: 2.5%;
 
@@ -17,7 +17,7 @@
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
 
-  margin-left: 100px;
+  margin-left: 6%;
   margin-top: 260px;
 }
 #card1{
@@ -27,11 +27,11 @@
 
   font-family: fantasy;
   
-  height: 250px;
-  width: 240px;
+  height: 50%;
+  width: 26%;
 
   bottom: 14%;
-  left:460px;
+  left: 31%;
   
   margin: 2.5%;
 
@@ -41,7 +41,7 @@
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
 
-  margin-left: 100px;
+  margin-left: 6%;
 
 }
 #card2{
@@ -49,11 +49,11 @@
   display: none;
   font-family: fantasy;
 
-  height: 250px;
-  width: 240px;
+  height: 50%;
+  width: 26%;
 
   bottom: 14%;
-  left:950px;
+  left: 62%;
   
   margin: 2.5%;
 
@@ -63,7 +63,7 @@
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
 
-  margin-left: 100px;
+  margin-left: 6%;
   margin-top:243px;
 }
 .card:hover {
@@ -75,9 +75,33 @@
 }
 #container {
   display: block;
-  margin: -30px auto 0 auto;
+  margin: 0px auto 20px auto;
   width: 90%;
-  height: 300px;
+  height: 200px;
+ }
+ h4{
+  text-align: center;
+
+  border: 2px ridge gray;
+  border-radius: 15px;
+
+  background: rgb(169, 173, 118);
+
+  margin: 10px;
+  padding: 10px;
+ }
+ section{
+  text-align: center;
+
+  border: 2px ridge gray;
+  border-radius: 15px;
+
+  background: rgb(169, 173, 118);
+
+  margin: 10px;
+  margin-top: 65px;
+  padding: 10px;
+  height: 30%;
  }
 /* Deck */
 #deckContainer
@@ -144,7 +168,7 @@
 }
 .animateDeck1
 {
-  animation: shuffle1 2s infinite
+  animation: shuffle1 1.5s infinite
 }
 .animateDeck2
 {
@@ -153,7 +177,7 @@
 @keyframes shuffle0 {
 	0% {}
 	30% {
-    transform: translateY(150px) translateX(150px) rotate(50deg) rotateY(50deg);
+    transform: translateY(-150px) translateX(150px) rotate(50deg) rotateY(50deg);
     z-index: 0;
 	}
 	100% {
@@ -202,5 +226,25 @@
 @keyframes fancyDraw2{
   0%   {}
   100% {transform: translateY(-280px) translateX(700px)}
-  
+}
+/* HIGHLIGHT ANIMATION */
+.gain{
+  animation: Gain .5s infinite;
+  border-radius: 100px;
+  background-color: rgb(197, 255, 111);
+}
+@keyframes Gain{
+  0%{}
+  50%{box-shadow: 0px 0px 12px 12px greenyellow}
+  100%{}
+}
+.loss{
+  animation: Loss .5s infinite;
+  border-radius: 100px;
+  background-color: rgb(245, 91, 91);
+}
+@keyframes Loss{
+  0%{}
+  50%{box-shadow: 0px 0px 12px 12px red}
+  100%{}
 }

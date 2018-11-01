@@ -15,7 +15,7 @@ function stopShuffle(){
 }
 function animateShuffle(){
   touchDeck('deck', 2, 'class', `animateDeck`, true)
-  setTimeout(stopShuffle, 6000)
+  setTimeout(stopShuffle, 3000)
 }
 function hideCards(){
   touchDeck('card', 2, 'style', 'display:none', false)
@@ -31,4 +31,14 @@ function animateDraw(){
   touchDeck('deck', 2, 'class', 'animateCard', true)
   setTimeout(stopDraw, 1999)
   setTimeout(revealCards, 1999)
+}
+function highlightElement(target, type){
+  document.getElementById(target).setAttribute('class', type);
+  setTimeout(hightlightStop, 500)
+}
+function hightlightStop(){
+  document.getElementById('hopeBar').setAttribute('class', 'none')
+  document.getElementById('healthBar').setAttribute('class', 'none')
+  document.getElementById('resourceBar').setAttribute('class', 'none')
+  document.getElementById('protectionBar').setAttribute('class', 'none')
 }
