@@ -104,7 +104,7 @@ function card9(){
 }
 //++++++++++++++++++
 //Net Negative Cards
-new Card(10, 'Beast', 'You have a brushin with the local wildlife.', '--hp')
+new Card(10, 'Beast', 'You have a encounter with the local wildlife.', '--hp')
 function card10(){
   updateHealth('minus', 15);
 }

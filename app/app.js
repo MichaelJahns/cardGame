@@ -174,8 +174,6 @@ function handleSelection(){
     setTimeout(drawPhase, 300)
     setTimeout(turnCounter, 300)
   }
-  // saveState();
-
 }
 function testForGameOver(){
   if(Card.gamestats['hope'] === 0 ||Card.gamestats['health'] === 0 ||Card.gamestats['resource'] === 0 || Card.gamestats['protection'] === 0){
@@ -189,7 +187,6 @@ function testForGameOver(){
     window.location.href = 'gameOver.html';
   }
 }
-
 //++++++++++++++
 //ExecutableCode
 

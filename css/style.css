@@ -127,7 +127,7 @@ nav{
 
   #top_scores {
     padding: 15px;
-    outline: groove rgb(32, 29, 51) 5px;
+    display: block;
     margin: 25px 100px;
     padding-right: 15px;
     height: 270px; 
