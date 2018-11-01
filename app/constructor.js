@@ -170,14 +170,16 @@ new Card(21, 'Befriend Merchant', 'It is willing to trade.', 'Adds merchant expa
 function card21(){
 if(Card.befriendMerchant === false){
   new Card(22,'Meet merchant by a pond', 'Merchant is selling elixirs. You buy one.', '++ health -- resources')
-  new Card(23, 'Stumble upon Merchant trapped in bog', 'You choose to help and Merchant offers a sharp knife', '++ protection -- health' )
-  new Card(24, 'Fight Merchant', 'You receive the beating of your lifetime. However, you manage to stab him in the heart', 'Drop to 1 hp and up 100 resources')
+  new Card(23, 'Stumble upon Merchant trapped in a bog', 'You choose to help and Merchant offers a sharp knife', '++ protection -- health' )
+  new Card(24, 'Fight Merchant', 'You receive the beating of your lifetime. However, you manage to stab it in the heart', 'Drop to 1 hp and up 100 resources')
   new Card(25, 'Merchant offers non FDA approved elixir', 'The bottle looks disgusting, but you drink it anyway. Merchant is incredibley charming after all.' , 'Drop to 1 hp and up 100 hope')
-  new Card(26, 'Merchant gives you survival advice', 'Merchant tells you how he survived all these years. You realize your odds of finding your way home are slim to none', '++ protection -- hope')
+  new Card(26, 'Merchant gives you survival advice', 'Merchant tells you how it survived all these years. You realize your odds of finding your way home are slim to none', '++ protection -- hope')
   new Card(27, 'Merchant overstocked. EVERYTHING MUST GO!', 'Merchant has more resources than Merchant can carry. You\'re doing Merchant a favor by taking some', '++ resources')
+
   new Card(31, 'Fall for the Merchant', 'Something about that amourphous blob has your heart bubbling. Do you give in to these feelings.', 'Adds OP merchant expansion cards')
   for(var i = 1; i < 8; i++){
     Card.cardDeck.push(Card.allCards[20+i])
+
   }
   shuffle(Card.cardDeck)
   Card.befriendMerchant = true
@@ -218,6 +220,7 @@ if(Card.befriendMerchant === false){
   function card27(){
     updateResources('add', 50);
   }
+
 function card31(){
   if(Card.loveMerchant === false){
   new Card(28, 'Merchant knows the way out', 'Merchant tells you that it knows how you can get home, but will only tell you if you when you are ready', '++ hope')
