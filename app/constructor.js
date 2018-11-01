@@ -162,11 +162,17 @@ function card20(){
 // +++++++++++++++++++++++++++
 new Card(21, 'Befriend Merchant', 'It is willing to trade.', 'Adds merchant expansion cards')
 function card21(){
-  new Card(22,'Meet merchant by a pond', 'Merchant is selling elixirs. Do you buy one?', '++ health -- resources')
+  new Card(22,'Meet merchant by a pond', 'Merchant is selling elixirs. You buy one.', '++ health -- resources')
   new Card(23, 'Stumble upon Merchant trapped in bog', 'You choose to help and Merchant offers a sharp knife', '++ protection -- health' )
   new Card(24, 'Fight Merchant', 'You receive the beating of your lifetime. However, you manage to stab him in the heart', 'Drop to 1 hp and up 100 resources')
   new Card(25, 'Merchant offers non FDA approved elixir', 'The bottle looks disgusting, but you drink it anyway. Merchant is incredibley charming after all.' , 'Drop to 1 hp and up 100 hope')
+  new Card(26, 'Merchant gives you survival advice', 'Merchant tells you how he survived all these years. You realize your odds of finding your way home are slim to none', '++ protection -- hope')
+  new Card(27, 'Merchant overstocked. EVERYTHING MUST GO!', 'Merchant has more resources than Merchant can carry. You\'re doing Merchant a favor by taking some', '++ resources')
+  new Card(28, 'Merchant knows the way out', 'Merchant tells you that it knows how you can get home, but will only tell you if you when you are ready', '++ hope')
+  new Card(29, 'Merchant is in trouble', 'You happen upon Merchant fending off Banditos. You help and in the scuffle you are slightly injured. As thanks Merchant gives you an insolated tarp for your shelter.', '+++ protection')
+  new Card(30, 'Merchant has all the bacons', 'Merchant has been holding out on you. You discover the it has all the bacons. You demand that Merchant shares. Merchant obliges', '+++ health')
   }
+
 
   function card22() {
     updateResources('minus', 10);
@@ -183,12 +189,36 @@ function card21(){
     updateResources('add', 100);
   }
 
-lskdjfklksjfkj
- kljdfjw
- dkfj
+  function card25(){
+    updateHealth('set', 1);
+    updateHope('add', 100);
+  }
 
- dskljfjowkjef
-//  eff it
+  function card26(){
+    updateProtection('add', 20);
+    updateHope('minus', 50);
+  }
+
+  function card27(){
+    updateResources('add', 50);
+  }
+
+  function card28(){
+    updateHope('add', 100);
+  }
+
+  function card29(){
+    updateProtection('add', 100)
+  }
+
+  function card30(){
+    updateHealth('add', 200)
+  }
+
+
+
+
+
 //++++++++++++++++++
 //Random Chance Card
 // new Card('Approach stranger', 'make friend or get robbed' , '++ socialization OR -hope -socializtion')
