@@ -8,7 +8,7 @@ function handleSubmit(event) {
 }
 
 
-submitName.addEventListener('click', handleSubmit);
+// submitName.addEventListener('click', handleSubmit);
 
 var leaderBoardArray = (localStorage.nameInput
 , localStorage.pastClicked);
