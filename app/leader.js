@@ -41,18 +41,6 @@ function playerBuild() {
   
 }
 
-var playersList = document.getElementById("leader_board");
-
-function loadPlayer(){
-  var x = JSON.parse(localStorage.playersFinal);
-
-  for (var i = 0; i < x.length; i++){
-    var liEl = document.createElement('li');
-    liEl.textContent = `${x[0]} : ${[1]}`;
-    playersList.appendChild(liEl);
-  }
-}
-
 function pageLoad(){
   if(localStorage.getItem('PlayerBoard') !== null){
     var temp = JSON.parse(localStorage.PlayerBoard)
@@ -71,6 +59,7 @@ submit.onclick = function(e){
   console.log(name, clickData);
   playerBuild();
   localStorage.PlayerBoard = JSON.stringify(data1);
+  window.location.href = 'leaderboard.html';
 }
 
 pageLoad();
