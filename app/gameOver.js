@@ -10,6 +10,7 @@
 
 // submitName.addEventListener('click', handleSubmit);
 
+
 // var leaderBoardArray = (localStorage.nameInput
 // , localStorage.pastClicked);
 
