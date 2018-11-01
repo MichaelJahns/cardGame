@@ -122,12 +122,12 @@ function card13(){
 new Card(14, 'Food Caravan','Your path meets you with a food caravan. They wont take you into the city, but they will trade you some apples', '-- resource + hp')
 function card14(){
   updateResources('minus', 20);
-  updateHealth('add', 10);
+  updateHealth('add', 5);
 }
 new Card(15, 'Create Hearth', 'Prepare for the long night by spending the twilight hours building a fire.', '--resource +protection')
 function card15(){
   updateResources('minus', 15);
-  updateProtection('add', 15);
+  updateProtection('add', 5);
 }
 new Card(16, 'River Water' ,'It taste funny, but damn is it hydrating' , '--hope +hp')
 function card16(){
@@ -137,18 +137,18 @@ function card16(){
 new Card(17, 'Be Merry','You choose to forget your woes. Chase the butterflies, jump at the rainbows, dance in the rain','--protection +hope')
 function card17(){
   updateProtection('minus', 30);
-  updateHope('add', 20);
+  updateHope('add', 15);
 }
 new Card(18, 'Corpse in the Clearing' ,'A well equipped corpse decays in a clearning. It looks like someone you once kew. Despair blossoms in your mind, but you loot the corpse.', '--hope +resources', )
 function card18(){
-  updateHope('minus', 20);
+  updateHope('minus', 25);
   updateResources('add', 15);
 }
 //++++++++++++++++++++++++++++++++++
 //Mostly Positive Hybrid Value Cards
 new Card(19, 'Exhausting Hunt', 'You chase your game for miles and miles, but your will to eat outmatches its survival instincts.', '++resource -hp')
 function card19(){
-  updateResources('add', 25);
+  updateResources('add', 20);
   updateHealth('minus', 10);
 }
 
