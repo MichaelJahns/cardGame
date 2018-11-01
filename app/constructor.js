@@ -18,6 +18,8 @@ Card.gamestats = {
   resource: 50,
   protection: 50
 }
+Card.befriendMerchant = false;
+Card.loveMerchant = false;
 Card.functions= {
   1: card1,
   2: card2,
@@ -49,6 +51,7 @@ Card.functions= {
   28: card28,
   29: card29,
   30: card30,
+  31: card31,
 
 }
 //++++++++++++++
@@ -101,7 +104,7 @@ function card9(){
 }
 //++++++++++++++++++
 //Net Negative Cards
-new Card(10, 'Beast', 'You have a brushin with the local wildlife.', '--hp')
+new Card(10, 'Beast', 'You have a encounter with the local wildlife.', '--hp')
 function card10(){
   updateHealth('minus', 15);
 }
@@ -165,16 +168,28 @@ function card20(){
 // +++++++++++++++++++++++++++
 new Card(21, 'Befriend Merchant', 'It is willing to trade.', 'Adds merchant expansion cards')
 function card21(){
+if(Card.befriendMerchant === false){
   new Card(22,'Meet merchant by a pond', 'Merchant is selling elixirs. You buy one.', '++ health -- resources')
-  new Card(23, 'Stumble upon Merchant trapped in bog', 'You choose to help and Merchant offers a sharp knife', '++ protection -- health' )
-  new Card(24, 'Fight Merchant', 'You receive the beating of your lifetime. However, you manage to stab him in the heart', 'Drop to 1 hp and up 100 resources')
+  new Card(23, 'Stumble upon Merchant trapped in a bog', 'You choose to help and Merchant offers a sharp knife', '++ protection -- health' )
+  new Card(24, 'Fight Merchant', 'You receive the beating of your lifetime. However, you manage to stab it in the heart', 'Drop to 1 hp and up 100 resources')
   new Card(25, 'Merchant offers non FDA approved elixir', 'The bottle looks disgusting, but you drink it anyway. Merchant is incredibley charming after all.' , 'Drop to 1 hp and up 100 hope')
-  new Card(26, 'Merchant gives you survival advice', 'Merchant tells you how he survived all these years. You realize your odds of finding your way home are slim to none', '++ protection -- hope')
+  new Card(26, 'Merchant gives you survival advice', 'Merchant tells you how it survived all these years. You realize your odds of finding your way home are slim to none', '++ protection -- hope')
   new Card(27, 'Merchant overstocked. EVERYTHING MUST GO!', 'Merchant has more resources than Merchant can carry. You\'re doing Merchant a favor by taking some', '++ resources')
-  new Card(28, 'Merchant knows the way out', 'Merchant tells you that it knows how you can get home, but will only tell you if you when you are ready', '++ hope')
-  new Card(29, 'Merchant is in trouble', 'You happen upon Merchant fending off Banditos. You help and in the scuffle you are slightly injured. As thanks Merchant gives you an insolated tarp for your shelter.', '+++ protection')
-  new Card(30, 'Merchant has all the bacons', 'Merchant has been holding out on you. You discover the it has all the bacons. You demand that Merchant shares. Merchant obliges', '+++ health')
+
+  new Card(31, 'Fall for the Merchant', 'Something about that amourphous blob has your heart bubbling. Do you give in to these feelings.', 'Adds OP merchant expansion cards')
+  for(var i = 1; i < 8; i++){
+    Card.cardDeck.push(Card.allCards[20+i])
+
   }
+  shuffle(Card.cardDeck)
+  Card.befriendMerchant = true
+} else{
+  updateHealth('add', 5)
+  updateHope('add', 5)
+  updateProtection('add', 5)
+  updateResources('add', 5)
+}
+}
 
 
   function card22() {
@@ -189,12 +204,12 @@ function card21(){
 
   function card24(){
     updateHealth('set', 1);
-    updateResources('add', 100);
+    updateResources('add', 75);
   }
 
   function card25(){
     updateHealth('set', 1);
-    updateHope('add', 100);
+    updateHope('add', 75);
   }
 
   function card26(){
@@ -206,31 +221,32 @@ function card21(){
     updateResources('add', 50);
   }
 
-  function card28(){
-    updateHope('add', 100);
+function card31(){
+  if(Card.loveMerchant === false){
+  new Card(28, 'Merchant knows the way out', 'Merchant tells you that it knows how you can get home, but will only tell you if you when you are ready', '++ hope')
+  new Card(29, 'Merchant is in trouble', 'You happen upon Merchant fending off Banditos. You help and in the scuffle you are slightly injured. As thanks Merchant gives you an insolated tarp for your shelter.', '+++ protection')
+  new Card(30, 'Merchant has all the bacons', 'Merchant has been holding out on you. You discover the it has all the bacons. You demand that Merchant shares. Merchant obliges', '+++ health')
+  for(var i = 1; i < 4; i++){
+    Card.cardDeck.push(Card.allCards[20+i])
   }
+  shuffle(Card.cardDeck)
+  Card.loveMerchant = true
+  }else{
+  updateHealth('add', 15)
+  updateHope('add', 15)
+  updateProtection('add', 15)
+  updateResources('add', 15)
+}
+}
+function card28(){
+  updateHope('add', 100);
+}
 
-  function card29(){
-    updateProtection('add', 100)
-  }
+function card29(){
+  updateProtection('add', 100)
+}
 
-  function card30(){
-    updateHealth('add', 200)
-  }
-
-
-
-
-
-//++++++++++++++++++
-//Random Chance Card
-// new Card('Approach stranger', 'make friend or get robbed' , '++ socialization OR -hope -socializtion')
-
-// function approachStranger(){
-//     var temp = Math.round(Math.random);
-//     if(temp === 1){
-//         ++ socializiton
-//     }
-//     else{ -hope -socializiton}
-// }
+function card30(){
+  updateHealth('add', 200)
+}
 
