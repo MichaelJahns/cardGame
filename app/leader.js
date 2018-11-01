@@ -40,10 +40,6 @@ function playerBuild() {
   localStorage.playersFinal = JSON.stringify(sortedArray);
   
 }
-
-
-
-
 function pageLoad(){
   if(localStorage.getItem('PlayerBoard') !== null){
     var temp = JSON.parse(localStorage.PlayerBoard)
@@ -62,6 +58,7 @@ submit.onclick = function(e){
   console.log(name, clickData);
   playerBuild();
   localStorage.PlayerBoard = JSON.stringify(data1);
+  window.location.href = 'leaderboard.html';
 }
 
 pageLoad();

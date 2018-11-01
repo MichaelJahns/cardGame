@@ -17,10 +17,10 @@
 // console.log(leaderBoardArray);
 var playersList = document.getElementById('leader_board');
 
+var playersList = document.getElementById("leader_board");
 
 function loadPlayer(){
   var x = JSON.parse(localStorage.playersFinal);
-
   for (var i = 0; i < x.length; i++){
     var liEl = document.createElement('li');
     liEl.textContent = `${x[i]}`;
@@ -28,5 +28,4 @@ function loadPlayer(){
   }
 }
 
-loadPlayer();
-
+loadPlayer()
