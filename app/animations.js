@@ -32,9 +32,13 @@ function animateDraw(){
   setTimeout(stopDraw, 1999)
   setTimeout(revealCards, 1999)
 }
-function highlightGain(){
-
+function highlightElement(target, type){
+  document.getElementById(target).setAttribute('class', type);
+  setTimeout(hightlightStop, 500)
 }
-function highlightLoss(){
-  
+function hightlightStop(){
+  document.getElementById('hopeBar').setAttribute('class', 'none')
+  document.getElementById('healthBar').setAttribute('class', 'none')
+  document.getElementById('resourceBar').setAttribute('class', 'none')
+  document.getElementById('protectionBar').setAttribute('class', 'none')
 }

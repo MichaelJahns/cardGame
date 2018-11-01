@@ -52,76 +52,94 @@ function updateStats(){
 function updateHope(operation, value){
   if(operation === 'add'){
     Card.gamestats['hope'] += value;
+    highlightElement('hopeBar', 'gain')
   }
   if(operation === 'minus'){
     Card.gamestats['hope'] -= value;
+    highlightElement('hopeBar', 'loss')
   }
   if(operation === 'set'){
-
     Card.gamestats['hope'] = value
+    highlightElement('hopeBar', 'loss')
   }
   if(Card.gamestats['hope'] < 0){
     Card.gamestats['hope'] = 0;
+    highlightElement('hopeBar', 'loss')
   }
   if(Card.gamestats['hope'] > 100){
     Card.gamestats['hope'] = 100;
+    highlightElement('hopeBar', 'gain')
   }
   updateStats();
 }
 function updateHealth(operation, value){
   if(operation === 'add'){
     Card.gamestats['health'] += value;
+    highlightElement('healthBar', 'gain')
 
   }
   if(operation === 'minus'){
     Card.gamestats['health'] -= value;
+    highlightElement('healthBar', 'loss')
   }
   if(operation === 'set'){
     Card.gamestats['health'] = value
+    highlightElement('healthBar', 'loss')
   }
   if(Card.gamestats['health'] < 0){
     Card.gamestats['health'] = 0;
+    highlightElement('healthBar', 'loss')
   }
   if(Card.gamestats['health'] > 100){
     Card.gamestats['health'] = 100;
+    highlightElement('healthBar', 'gain')
   }
   updateStats();
 }
 function updateResources(operation, value){
   if(operation === 'add'){
     Card.gamestats['resource'] += value;
+    highlightElement('resourceBar', 'gain')
   }
   if(operation === 'minus'){
     Card.gamestats['resource'] -= value;
+    highlightElement('resourceBar', 'loss')
   }
   if(operation === 'set'){
     Card.gamestats['resource'] = value
+    highlightElement('resourceBar', 'loss')
   }
   if(Card.gamestats['resource'] < 0){
     Card.gamestats['resource'] = 0;
+    highlightElement('resourceBar', 'loss')
   }
   if(Card.gamestats['resource'] > 100){
     Card.gamestats['resource'] = 100;
+    highlightElement('resourceBar', 'gain')
   }
   updateStats();
 }
 function updateProtection(operation, value){
   if(operation === 'add'){
     Card.gamestats['protection'] += value;
+    highlightElement('protectionBar', 'gain')
 
   }
   if(operation === 'minus'){
     Card.gamestats['protection'] -= value;
-
+    highlightElement('protectionBar', 'loss')
   }
   if(operation === 'set'){
     Card.gamestats['protection'] = value
+    highlightElement('protectionBar', 'loss')
   }
   if(Card.gamestats['protection'] < 0){
     Card.gamestats['protection'] = 0;
+    highlightElement('protectionBar', 'loss')
   }
   if(Card.gamestats['protection'] > 100){
     Card.gamestats['protection'] = 100;
+    highlightElement('protectionBar', 'gain')
   }
   updateStats();
 }
@@ -169,16 +187,13 @@ function handleSelection(){
 function testForGameOver(){
   if(Card.gamestats['hope'] === 0 ||Card.gamestats['health'] === 0 ||Card.gamestats['resource'] === 0 || Card.gamestats['protection'] === 0){
 
-    alert('You lost. You ran out of resources!')
+    alert(`You have succumbed to elements far before you found your way home.. you manage to survive ${Card.totalTurns} turns.`)
 
     localStorage.setItem('userTurns', JSON.stringify({'clicks':Card.totalClicks}))
-    console.log(Card.totalClicks);
-    console.log(localStorage.endGameStats);
-    console.log(localStorage.submit);
     localStorage.setItem('endGameStats', JSON.stringify({'Card.gamestats["hope"]': Card.gamestats['hope'], 'Card.gamestats["health"]':Card.gamestats['health'], 'Card.gamestats["resource"]': Card.gamestats['resource'], 'Card.gamestats["protection"]': Card.gamestats['protection'], 'clicks':Card.totalClicks}))
 
 
-    window.location.href = 'gameOver.html';
+    // window.location.href = 'gameOver.html';
   }
 }
 

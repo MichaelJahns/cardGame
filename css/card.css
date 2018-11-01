@@ -226,5 +226,25 @@
 @keyframes fancyDraw2{
   0%   {}
   100% {transform: translateY(-280px) translateX(700px)}
-  
+}
+/* HIGHLIGHT ANIMATION */
+.gain{
+  animation: Gain .5s infinite;
+  border-radius: 100px;
+  background-color: rgb(197, 255, 111);
+}
+@keyframes Gain{
+  0%{}
+  50%{box-shadow: 0px 0px 12px 12px greenyellow}
+  100%{}
+}
+.loss{
+  animation: Loss .5s infinite;
+  border-radius: 100px;
+  background-color: rgb(245, 91, 91);
+}
+@keyframes Loss{
+  0%{}
+  50%{box-shadow: 0px 0px 12px 12px red}
+  100%{}
 }
