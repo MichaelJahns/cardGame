@@ -3,11 +3,11 @@
   display: none;
   font-family: fantasy;
 
-  height: 250px;
-  width: 240px;
+  height: 50%;
+  width: 26%;
 
   bottom: 14%;
-  left:40px;
+  left:0%;
   
   margin: 2.5%;
 
@@ -17,7 +17,7 @@
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
 
-  margin-left: 100px;
+  margin-left: 6%;
   margin-top: 260px;
 }
 #card1{
@@ -27,11 +27,11 @@
 
   font-family: fantasy;
   
-  height: 250px;
-  width: 240px;
+  height: 50%;
+  width: 26%;
 
   bottom: 14%;
-  left:460px;
+  left: 31%;
   
   margin: 2.5%;
 
@@ -41,7 +41,7 @@
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
 
-  margin-left: 100px;
+  margin-left: 6%;
 
 }
 #card2{
@@ -49,11 +49,11 @@
   display: none;
   font-family: fantasy;
 
-  height: 250px;
-  width: 240px;
+  height: 50%;
+  width: 26%;
 
   bottom: 14%;
-  left:950px;
+  left: 62%;
   
   margin: 2.5%;
 
@@ -63,7 +63,7 @@
   transform: rotateX(20deg) scale(1);
   transition: 0.4s all ease;
 
-  margin-left: 100px;
+  margin-left: 6%;
   margin-top:243px;
 }
 .card:hover {
@@ -75,9 +75,9 @@
 }
 #container {
   display: block;
-  margin: -30px auto 0 auto;
+  margin: 0px auto 20px auto;
   width: 90%;
-  height: 300px;
+  height: 200px;
  }
 /* Deck */
 #deckContainer
