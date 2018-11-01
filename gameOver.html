@@ -3,43 +3,43 @@
 <head>
     <title>Document</title>
     <link rel="stylesheet"  href="css/gameOver.css" />
+    <link rel="stylesheet"  href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="nav_menu">
-        <a href="index.html" >       Home </a>
-        <a href="leaderboard.html">    Leader Board </a>
-        <a href="aboutteam.html"> About Us </a>
-      </nav>
-    
-      <h1 id="game_title">DEV'S DEMISE</h1>
+  <nav class="nav_menu">
+    <a href="index.html" >       Home </a>
+    <a href="leaderboard.html">    Leader Board </a>
+    <a href="aboutteam.html"> About Us </a>
+  </nav>
+  
+  <h1 id="game_title">DEV'S DEMISE</h1>
+  
   <div>
     <p id="error">G<span>A</span><span>M</span>E</p>
     <p id="code">O<span>V</span><span>E</span><span>R</span></p>
   </div>
 
-  <form id="submit">
-    <fieldset>
-      <legend>Rank Yourself:</legend>
-      Name: <input id="nameInput" type="text">
-      <button>Submit Name</button>
-    </fieldset>
-  </form>
+  
+
   <form id="my-form">
       <fieldset>
        <legend>Rank Yourself:</legend>
-       Name: <input type="text" id="playerName" name="PlayerName">
-        <button>Submit Name</button>
+       Name: <input type="text" id="playerName" name="playerName">
+        <!-- <a href="leaderboard.html"> <button id ="submit">Submit Name </button></a> -->
+        <div id="submit">
+        <a href="leaderboard.html" >Submit Name</a>
+      </div>
     </fieldset>
   </form>
 
 
   <div id="play_game">
-    <a href="cardDeck.html">PLAY AGAIN </a>
+     <a href="cardDeck.html">PLAY AGAIN </a>
   </div>
 
 
-<script src='app/gameOver.js'></script>
 <script src=app/constructor.js></script>
 <script src=app/animations.js></script>
 <script src=app/leader.js></script>
