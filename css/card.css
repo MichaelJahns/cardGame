@@ -1,6 +1,6 @@
 #card0 {
   position: absolute;
-  display: none;
+  /* display: none; */
   font-family: fantasy;
 
   height: 250px;
@@ -79,6 +79,30 @@
   width: 90%;
   height: 300px;
  }
+ h4{
+  text-align: center;
+
+  border: 2px ridge gray;
+  border-radius: 15px;
+
+  background: rgb(169, 173, 118);
+
+  margin: 10px;
+  padding: 10px;
+ }
+ section{
+  text-align: center;
+
+  border: 2px ridge gray;
+  border-radius: 15px;
+
+  background: rgb(169, 173, 118);
+
+  margin: 10px;
+  margin-top: 65px;
+  padding: 10px;
+  height: 30%;
+ }
 /* Deck */
 #deckContainer
 {
@@ -153,7 +177,7 @@
 @keyframes shuffle0 {
 	0% {}
 	30% {
-    transform: translateY(150px) translateX(150px) rotate(50deg) rotateY(50deg);
+    transform: translateY(-150px) translateX(150px) rotate(50deg) rotateY(50deg);
     z-index: 0;
 	}
 	100% {
