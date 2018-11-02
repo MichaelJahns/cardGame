@@ -172,15 +172,15 @@
 /* SHUFFLE ANIMATION */
 .animateDeck0
 {
-  animation: shuffle0 3s infinite
+  animation: shuffle0 1.2s infinite
 }
 .animateDeck1
 {
-  animation: shuffle1 1.5s infinite
+  animation: shuffle1 1.0s infinite
 }
 .animateDeck2
 {
-  animation: shuffle2 1.5s infinite
+  animation: shuffle2 1.2s infinite
 }
 @keyframes shuffle0 {
 	0% {}

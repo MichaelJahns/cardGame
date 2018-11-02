@@ -144,7 +144,7 @@ function handleStart(event){
   // Card.gameInProgress = true; IS THIS NECESSARY FOR GAME RESUME FUNCTIonalITy
   document.getElementById('start').style.visibility = 'hidden';
   shuffle(Card.allCards);
-  setTimeout(drawPhase, 3000);
+  setTimeout(drawPhase, 2000);
 }
 function handleSelection(){
   if(event.target.className === 'card')
@@ -168,7 +168,7 @@ function handleSelection(){
   if(Card.cardDeck.length < 3){
     hideCards();
     shuffle(Card.allCards);
-    setTimeout(drawPhase, 3000)
+    setTimeout(drawPhase, 2000)
     setTimeout(turnCounter, 300)
   }  else{
     setTimeout(drawPhase, 300)

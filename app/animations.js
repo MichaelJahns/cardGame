@@ -15,7 +15,7 @@ function stopShuffle(){
 }
 function animateShuffle(){
   touchDeck('deck', 2, 'class', `animateDeck`, true)
-  setTimeout(stopShuffle, 3000)
+  setTimeout(stopShuffle, 2000)
 }
 function hideCards(){
   touchDeck('card', 2, 'style', 'display:none', false)
@@ -29,8 +29,8 @@ function stopDraw(){
 function animateDraw(){
   hideCards();
   touchDeck('deck', 2, 'class', 'animateCard', true)
-  setTimeout(stopDraw, 1999)
-  setTimeout(revealCards, 1999)
+  setTimeout(stopDraw, 999)
+  setTimeout(revealCards, 999)
 }
 function highlightElement(target, type){
   document.getElementById(target).setAttribute('class', type);
