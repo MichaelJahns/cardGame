@@ -15,7 +15,6 @@
 // , localStorage.pastClicked);
 
 // console.log(leaderBoardArray);
-var playersList = document.getElementById('leader_board');
 
 var playersList = document.getElementById("leader_board");
 
